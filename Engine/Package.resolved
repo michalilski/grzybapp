@@ -1,5 +1,5 @@
 {
-  "originHash" : "47293e39a68a9ba6f4f491c65cdff490b9886e90c086bebbb4a5b65b7f832748",
+  "originHash" : "bd40f230c3bfb16a6436c68bea36ed2dab7fa516473c3528e05f0d16cee142b0",
   "pins" : [
     {
       "identity" : "grdb.swift",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "b83108d10f42680d78f23fe4d4d80fc88dab3212",
         "version" : "7.11.1"
+      }
+    },
+    {
+      "identity" : "maplibre-gl-native-distribution",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/maplibre/maplibre-gl-native-distribution",
+      "state" : {
+        "revision" : "13e41ab3d77ff5113e7e5d4ee87803b1f81f5683",
+        "version" : "6.31.0"
       }
     }
   ],

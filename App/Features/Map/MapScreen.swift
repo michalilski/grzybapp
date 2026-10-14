@@ -166,6 +166,9 @@ private struct SpeciesChips: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: Theme.Spacing.sm) {
+                FilterChip(title: "Ogólnie", isSelected: app.map.isGeneral) {
+                    app.select(filter: Preferences.general)
+                }
                 FilterChip(title: "Wszystkie jadalne", isSelected: app.preferences.speciesFilter == Preferences.allSpecies) {
                     app.select(filter: Preferences.allSpecies)
                 }
@@ -268,7 +271,7 @@ private struct DaySelector: View {
                         .font(Theme.Typeface.captionSM)
                         .foregroundStyle(Theme.Palette.signal)
                 }
-                Legend()
+                if app.map.isGeneral { HeatLegend() } else { Legend() }
             }
             HStack(spacing: 6) {
                 ForEach(0...7, id: \.self) { offset in
@@ -318,6 +321,25 @@ private struct Legend: View {
             }
         }
         .accessibilityLabel("Legenda: umiarkowany, dobry, bardzo dobry")
+    }
+}
+
+/// Gradient bar for the general heatmap.
+private struct HeatLegend: View {
+    var body: some View {
+        HStack(spacing: 4) {
+            Text("mało").font(Theme.Typeface.captionSM).foregroundStyle(Theme.Palette.mute)
+            LinearGradient(colors: stride(from: 10.0, through: 100, by: 15).map(color), startPoint: .leading, endPoint: .trailing)
+                .frame(width: 56, height: 10)
+                .clipShape(Capsule())
+            Text("dużo").font(Theme.Typeface.captionSM).foregroundStyle(Theme.Palette.mute)
+        }
+        .accessibilityLabel("Legenda: ogólny potencjał od małego do dużego")
+    }
+
+    private func color(_ value: Double) -> Color {
+        let c = HeatRamp.color(at: value)
+        return Color(red: c.r / 255, green: c.g / 255, blue: c.b / 255).opacity(max(0.25, c.a / 255))
     }
 }
 

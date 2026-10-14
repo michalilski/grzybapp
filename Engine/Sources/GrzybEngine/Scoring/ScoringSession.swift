@@ -1,5 +1,29 @@
 import Foundation
 
+/// How species scores combine into one map value.
+public enum PotentialAggregation: Sendable {
+    /// Strongest single species (spec: "dowolny jadalny").
+    case best
+    /// General potential: best species plus a share of the gap to "any of" 1 − Π(1 − s/100).
+    case general(diversityBonus: Double)
+
+    public func combine(_ scores: [Double]) -> Double {
+        let best = scores.max() ?? 0
+        switch self {
+        case .best: return best
+        case .general(let bonus): return Self.blend(best: best, anyOf: Self.anyOf(scores), bonus: bonus)
+        }
+    }
+
+    static func anyOf(_ scores: [Double]) -> Double {
+        100 * (1 - scores.reduce(1) { $0 * (1 - $1 / 100) })
+    }
+
+    static func blend(best: Double, anyOf: Double, bonus: Double) -> Double {
+        best + bonus * (anyOf - best)
+    }
+}
+
 /// Per-cell potential for the map: value 0–100 or -1 where the cell is not drawn.
 public struct ScoreLayer: Sendable {
     public let geometry: GridGeometry
@@ -93,8 +117,9 @@ public final class ScoringSession: @unchecked Sendable {
         scorer.dynamicFactors(for: profile, on: day, weather: weather)
     }
 
-    public func layer(on day: DayStamp, speciesIds: [String]) -> ScoreLayer {
-        var values = [Float](repeating: -1, count: geometry.count)
+    public func layer(on day: DayStamp, speciesIds: [String], aggregation: PotentialAggregation = .best) -> ScoreLayer {
+        var best = [Float](repeating: -1, count: geometry.count)
+        var miss = [Float](repeating: 1, count: geometry.count)
         var winners = [Int16](repeating: -1, count: geometry.count)
         for (s, id) in speciesIds.enumerated() {
             guard let profile = profile(id), let statics = staticCache[id] else { continue }
@@ -103,13 +128,27 @@ public final class ScoringSession: @unchecked Sendable {
             for (i, cell) in cells.enumerated() where statics[i] > 0 {
                 let u = Float(prior[cell.cellIndex]?.factor ?? 1)
                 let score = min(100, 100 * statics[i] * dynamic * u)
-                if score > values[cell.cellIndex] {
-                    values[cell.cellIndex] = score
+                miss[cell.cellIndex] *= 1 - score / 100
+                if score > best[cell.cellIndex] {
+                    best[cell.cellIndex] = score
                     winners[cell.cellIndex] = Int16(s)
                 }
             }
         }
+        let values: [Float]
+        switch aggregation {
+        case .best:
+            values = best
+        case .general(let bonus):
+            values = zip(best, miss).map { b, m in
+                b < 0 ? -1 : Float(PotentialAggregation.blend(best: Double(b), anyOf: Double(100 * (1 - m)), bonus: bonus))
+            }
+        }
         return ScoreLayer(geometry: geometry, values: values, winners: winners, speciesIds: speciesIds)
+    }
+
+    public var generalAggregation: PotentialAggregation {
+        .general(diversityBonus: knowledge.parameters.scoring.generalDiversityBonus)
     }
 
     public func ranking(at index: Int, on day: DayStamp, speciesIds: [String]? = nil) -> [SpeciesScore] {

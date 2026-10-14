@@ -8,6 +8,7 @@ import Observation
 @Observable
 final class Preferences {
     static let allSpecies = "all"
+    static let general = "general"
 
     private let store: SettingsRepository
 
@@ -26,7 +27,7 @@ final class Preferences {
         fieldMode = store.bool("field_mode")
         notificationsEnabled = store.bool("notifications")
         activeRegionId = store.string("active_region")
-        speciesFilter = store.string("species_filter") ?? Self.allSpecies
+        speciesFilter = store.string("species_filter") ?? Self.general
         dayOffset = Int(store.string("day_offset") ?? "0") ?? 0
         disabledSpecies = Set((store.string("disabled_species") ?? "").split(separator: ",").map(String.init))
         lastFlushNotice = store.string("last_flush_notice")

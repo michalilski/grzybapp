@@ -72,3 +72,30 @@ final class ScorerTests: XCTestCase {
         XCTAssertEqual(boletus?.reasons.first?.kind, .positive)
     }
 }
+
+final class AggregationTests: XCTestCase {
+    func testAnyOfCombinesIndependentSpecies() {
+        let general = PotentialAggregation.general(diversityBonus: 0.4)
+        XCTAssertEqual(general.combine([50, 50]), 50 + 0.4 * 25, accuracy: 1e-9)
+        XCTAssertEqual(general.combine([80]), 80, accuracy: 1e-9)
+        XCTAssertEqual(general.combine([5, 5, 5]), 5 + 0.4 * (14.2625 - 5), accuracy: 1e-9)
+        XCTAssertEqual(PotentialAggregation.best.combine([50, 50]), 50)
+        XCTAssertEqual(general.combine([]), 0)
+    }
+
+    func testGeneralLayerIsAtLeastBestSpecies() throws {
+        let day = DayStamp(iso: "2026-10-09")!
+        let session = ScoringSession(
+            knowledge: TestSupport.knowledge, species: TestSupport.knowledge.atlasSpecies,
+            geometry: GridGeometry(bbox: BoundingBox(minLon: 21.35, minLat: 52.03, maxLon: 21.37, maxLat: 52.05), cellSizeM: 100),
+            cells: [TestSupport.cell(index: 0)], weather: TestSupport.syntheticWeather(end: day), observations: [], year: 2026
+        )
+        let ids = TestSupport.knowledge.atlasSpecies.map(\.id)
+        let best = session.layer(on: day, speciesIds: ids).values[0]
+        let general = session.layer(on: day, speciesIds: ids, aggregation: session.generalAggregation).values[0]
+        let expected = session.generalAggregation.combine(session.ranking(at: 0, on: day).map(\.score))
+        XCTAssertGreaterThanOrEqual(general, best)
+        XCTAssertEqual(Double(general), expected, accuracy: 0.01)
+        XCTAssertEqual(session.layer(on: day, speciesIds: ids, aggregation: session.generalAggregation).values[1], -1)
+    }
+}

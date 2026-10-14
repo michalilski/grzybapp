@@ -13,15 +13,29 @@
     "missing_weather_factor": 0.5,
     "edge_distance_m": 100,
     "terrain_min": 0.7,
-    "terrain_max": 1.2
+    "terrain_max": 1.2,
+    "general_diversity_bonus": 0.35
   },
-  "bands": { "moderate": 21, "good": 46, "very_good": 71 },
+  "bands": {
+    "moderate": 21,
+    "good": 46,
+    "very_good": 71
+  },
   "prior": {
     "sigma_m": 150,
     "radius_sigmas": 3,
-    "amount_weights": [0.3, 0.5, 0.8],
+    "amount_weights": [
+      0.3,
+      0.5,
+      0.8
+    ],
     "empty_weight": -0.4,
-    "year_decay": [1.0, 0.8, 0.6, 0.4],
+    "year_decay": [
+      1.0,
+      0.8,
+      0.6,
+      0.4
+    ],
     "min_factor": 0.5,
     "max_factor": 2.0,
     "negative_min_score": 40
@@ -38,6 +52,13 @@
     "lag_step_days": 2,
     "rain_event_mm": 10
   },
-  "flush": { "max_rain_days": 3, "warm_days": 4 },
-  "grid": { "cell_size_m": 100, "max_region_km": 30, "tile_km": 5 }
+  "flush": {
+    "max_rain_days": 3,
+    "warm_days": 4
+  },
+  "grid": {
+    "cell_size_m": 100,
+    "max_region_km": 30,
+    "tile_km": 5
+  }
 }

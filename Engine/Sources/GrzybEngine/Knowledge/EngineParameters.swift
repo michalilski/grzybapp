@@ -17,6 +17,7 @@ public struct EngineParameters: Codable, Equatable, Sendable {
         public var edgeDistanceM: Double
         public var terrainMin: Double
         public var terrainMax: Double
+        public var generalDiversityBonus: Double
 
         enum CodingKeys: String, CodingKey {
             case seasonFloor = "season_floor"
@@ -33,6 +34,7 @@ public struct EngineParameters: Codable, Equatable, Sendable {
             case edgeDistanceM = "edge_distance_m"
             case terrainMin = "terrain_min"
             case terrainMax = "terrain_max"
+            case generalDiversityBonus = "general_diversity_bonus"
         }
     }
 

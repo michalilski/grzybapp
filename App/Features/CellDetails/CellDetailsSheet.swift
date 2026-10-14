@@ -24,7 +24,7 @@ struct CellDetailsSheet: View {
     private func content(session: ScoringSession, cell: CellFeatures) -> some View {
         let ranking = session.ranking(at: cellIndex, on: app.map.selectedDay, speciesIds: app.species.enabled.map(\.id))
         return VStack(alignment: .leading, spacing: Theme.Spacing.xl) {
-            header(ranking.first, cell: cell)
+            header(ranking.first, cell: cell, ranking: ranking)
             actions(cell: cell, ranking: ranking)
             VStack(alignment: .leading, spacing: 0) {
                 SectionHeader(title: "Ranking gatunków", trailing: app.map.selectedDay.shortPolish)
@@ -50,10 +50,10 @@ struct CellDetailsSheet: View {
         .onAppear { expanded = expanded ?? ranking.first?.id }
     }
 
-    private func header(_ best: SpeciesScore?, cell: CellFeatures) -> some View {
+    private func header(_ best: SpeciesScore?, cell: CellFeatures, ranking: [SpeciesScore]) -> some View {
         HStack(alignment: .top) {
             VStack(alignment: .leading, spacing: Theme.Spacing.xs) {
-                Text("WARTO SPRAWDZIĆ")
+                Text(app.map.isGeneral ? "OGÓLNY POTENCJAŁ · NAJLEPIEJ" : "WARTO SPRAWDZIĆ")
                     .font(Theme.Typeface.captionSM)
                     .foregroundStyle(Theme.Palette.mute)
                 DisplayTitle(text: best?.species.namePl ?? "Brak potencjału", size: 40)
@@ -62,12 +62,18 @@ struct CellDetailsSheet: View {
                     .foregroundStyle(Theme.Palette.mute)
             }
             Spacer()
-            if let best { ScoreBadge(score: best.score, band: best.band, size: 64) }
+            if app.map.isGeneral {
+                let edible = Set(app.map.speciesIds(enabled: app.species.enabled))
+                let general = app.map.session?.generalAggregation.combine(ranking.filter { edible.contains($0.id) }.map(\.score)) ?? 0
+                ScoreBadge(score: general, band: PotentialBand(score: general, bands: app.services.knowledge.parameters.bands), size: 64)
+            } else if let best {
+                ScoreBadge(score: best.score, band: best.band, size: 64)
+            }
         }
     }
 
     private func actions(cell: CellFeatures, ranking: [SpeciesScore]) -> some View {
-        let target = app.preferences.speciesFilter == Preferences.allSpecies ? ranking.first?.id : app.preferences.speciesFilter
+        let target = app.map.speciesIds(enabled: app.species.enabled).count > 1 ? ranking.first?.id : app.preferences.speciesFilter
         return VStack(spacing: Theme.Spacing.sm) {
             HStack(spacing: Theme.Spacing.sm) {
                 Button("Znalazłem") { app.startObservation(at: cell.coordinate, speciesId: target, kind: .found) }

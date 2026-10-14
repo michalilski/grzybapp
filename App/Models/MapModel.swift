@@ -26,6 +26,8 @@ final class MapModel {
     var today: DayStamp { DayStamp.today() }
     var selectedDay: DayStamp { today.adding(preferences.dayOffset) }
 
+    var isGeneral: Bool { preferences.speciesFilter == Preferences.general }
+
     func speciesIds(enabled: [SpeciesProfile]) -> [String] {
         let filter = preferences.speciesFilter
         if filter != Preferences.allSpecies, enabled.contains(where: { $0.id == filter }) { return [filter] }
@@ -74,9 +76,13 @@ final class MapModel {
         let bands = services.knowledge.parameters.bands
         let fieldMode = preferences.fieldMode
         Task {
+            let general = isGeneral
             let result = await Task.detached(priority: .userInitiated) { () -> (ScoreOverlay?, Float) in
-                let layer = session.layer(on: day, speciesIds: ids)
-                return (ScoreRenderer.render(layer, bands: bands, fieldMode: fieldMode), layer.values.max() ?? 0)
+                let layer = session.layer(on: day, speciesIds: ids, aggregation: general ? session.generalAggregation : .best)
+                let overlay = general
+                    ? ScoreRenderer.renderHeatmap(layer, fieldMode: fieldMode)
+                    : ScoreRenderer.render(layer, bands: bands, fieldMode: fieldMode)
+                return (overlay, layer.values.max() ?? 0)
             }.value
             overlay = result.0
             maxScore = result.1

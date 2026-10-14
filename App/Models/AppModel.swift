@@ -73,7 +73,7 @@ final class AppModel {
     // MARK: Observations
 
     func startObservation(at coordinate: Coordinate?, speciesId: String? = nil, kind: ObservationKind = .found) {
-        let filter = preferences.speciesFilter == Preferences.allSpecies ? nil : preferences.speciesFilter
+        let filter = map.speciesIds(enabled: species.enabled).count > 1 ? nil : preferences.speciesFilter
         draft = ObservationDraft(coordinate: coordinate ?? services.location.coordinate, speciesId: speciesId ?? filter, kind: kind)
     }
 
@@ -99,7 +99,7 @@ final class AppModel {
         guard let cell = map.session?.cell(at: cellIndex) else { return }
         let ids = map.speciesIds(enabled: species.enabled)
         let ranked = map.session?.ranking(at: cellIndex, on: DayStamp.today(), speciesIds: ids) ?? []
-        let target = preferences.speciesFilter == Preferences.allSpecies ? ranked.first?.species.id : preferences.speciesFilter
+        let target = ids.count > 1 ? ranked.first?.species.id : preferences.speciesFilter
         let obs = FieldObservation(
             speciesId: target, kind: positive ? .found : .empty, amount: 1, lon: cell.lon, lat: cell.lat, note: "Ocena podpowiedzi"
         )

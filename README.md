@@ -32,6 +32,7 @@ UPDATE_GOLDEN=1 swift test --filter GoldenRankingTests        # deliberately rew
 ## What works
 
 - Draw a region (≤ 30 × 30 km) → downloads BDL stands (layers 66 + 67) and sites (20), builds the 100 m grid, fetches weather, downloads offline map tiles (zoom 10–16).
+- **Ogólnie** (default): smooth heatmap of overall mushroom potential = best species + `general_diversity_bonus` × (gap to “any of” 1 − Π(1 − sᵢ/100)), so places good for several species stand out.
 - Map overlay in 4 bands, species chips incl. "wszystkie jadalne" (max over species), day selector today … +7, stand outlines at zoom ≥ 14.5, field mode.
 - Tap a cell → ranking with ✓ / ✗ / ★ reasons, source data with data year, 21-day rain chart, found / empty / 👍 👎 / terrain correction / in-app compass.
 - Long-press or “+” → observation (≤ 3 taps), photo, note; `score_at_time`, factors and context are stored for calibration.

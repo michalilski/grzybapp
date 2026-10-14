@@ -118,7 +118,7 @@ final class MapCoordinator: NSObject, MLNMapViewDelegate, UIGestureRecognizerDel
     }
 
     func mapView(_ mapView: MLNMapView, didFinishLoading style: MLNStyle) {
-        style.localizeLabels(into: Locale(identifier: "pl"))
+        localizeLabels(style)
         styleReady = true
         applied = nil
         if let pending { apply(pending, to: mapView) }
@@ -129,6 +129,15 @@ final class MapCoordinator: NSObject, MLNMapViewDelegate, UIGestureRecognizerDel
         let b = mapView.visibleCoordinateBounds
         let box = BoundingBox(minLon: b.sw.longitude, minLat: b.sw.latitude, maxLon: b.ne.longitude, maxLat: b.ne.latitude)
         parent?.onCameraChange(Coordinate(lon: c.longitude, lat: c.latitude), mapView.zoomLevel, box)
+    }
+
+    /// OpenFreeMap carries `name:pl`; show it where available instead of English names.
+    private func localizeLabels(_ style: MLNStyle) {
+        let polish = NSExpression(mglJSONObject: ["coalesce", ["get", "name:pl"], ["get", "name"]])
+        for case let layer as MLNSymbolStyleLayer in style.layers where layer.text != nil {
+            let current = layer.text.description
+            if current.contains("name") { layer.text = polish }
+        }
     }
 
     func perform(_ command: MapCommand, on map: MLNMapView) {
@@ -193,11 +202,13 @@ final class MapCoordinator: NSObject, MLNMapViewDelegate, UIGestureRecognizerDel
             let source = MLNImageSource(identifier: ID.overlaySource, coordinateQuad: quad, image: overlay.image)
             style.addSource(source)
             let layer = MLNRasterStyleLayer(identifier: ID.overlayLayer, source: source)
-            layer.rasterResamplingMode = NSExpression(forConstantValue: NSValue(mlnRasterResamplingMode: .nearest))
             layer.rasterFadeDuration = NSExpression(forConstantValue: 0)
             insert(layer, style)
         }
-        (style.layer(withIdentifier: ID.overlayLayer) as? MLNRasterStyleLayer)?.rasterOpacity = NSExpression(forConstantValue: content.overlayOpacity)
+        guard let layer = style.layer(withIdentifier: ID.overlayLayer) as? MLNRasterStyleLayer else { return }
+        let mode: MLNRasterResamplingMode = overlay.smooth ? .linear : .nearest
+        layer.rasterResamplingMode = NSExpression(forConstantValue: NSValue(mlnRasterResamplingMode: mode))
+        layer.rasterOpacity = NSExpression(forConstantValue: overlay.smooth ? 1 : content.overlayOpacity)
     }
 
     private func applyOutlines(_ content: MapContent, _ style: MLNStyle) {
