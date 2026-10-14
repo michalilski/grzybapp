@@ -6,6 +6,8 @@ public struct WeatherFactors: Codable, Equatable, Sendable {
     public var rain: Double
     public var rainMm: Double
     public var rainBase: Double
+    public var soilMoisture: Double?
+    public var soilWater: Double
     public var dryDays: Int
     public var dryPenalty: Double
     public var usesForecast: Bool
@@ -18,7 +20,7 @@ public struct WeatherFactors: Codable, Equatable, Sendable {
 
     public static func unavailable(_ factor: Double) -> WeatherFactors {
         WeatherFactors(
-            available: false, rain: factor, rainMm: 0, rainBase: factor, dryDays: 0, dryPenalty: 0,
+            available: false, rain: factor, rainMm: 0, rainBase: factor, soilMoisture: nil, soilWater: 0, dryDays: 0, dryPenalty: 0,
             usesForecast: false, temp: factor, soilTempC: nil, coldNights: nil, coldNightsShort: false,
             frost: 1, frostDaysAgo: nil
         )
@@ -40,7 +42,9 @@ public struct WeatherIndex: Sendable {
             return .unavailable(parameters.missingWeatherFactor)
         }
         let rainMm = window.reduce(0) { $0 + precipitation(of: $1) }
-        let base = rainCurve(needs).value(at: rainMm)
+        let moisture = meanSoilMoisture(endingAt: day, weather: weather)
+        let soilWater = moisture.map(soilWaterFactor) ?? 0
+        let base = max(rainCurve(needs).value(at: rainMm), soilWater)
         let dryDays = dryDayCount(before: day, window: needs.dryWindowDays, weather: weather)
         let penalty = needs.dryDayPenalty * Double(dryDays)
         let soil = meanSoilTemp(endingAt: day, weather: weather)
@@ -54,6 +58,8 @@ public struct WeatherIndex: Sendable {
             rain: (base - penalty).clamped(0, 1),
             rainMm: rainMm,
             rainBase: base,
+            soilMoisture: moisture,
+            soilWater: soilWater,
             dryDays: dryDays,
             dryPenalty: min(penalty, base),
             usesForecast: window.contains { $0.isForecast },
@@ -72,6 +78,18 @@ public struct WeatherIndex: Sendable {
 
     func rainCurve(_ needs: WeatherNeeds) -> LinearCurve {
         LinearCurve([(0, 0), (needs.rainMinMm, 0.5), (needs.rainOptMm, 1)])
+    }
+
+    /// Soil moisture keeps fruiting going between rains, but never counts as much as a fresh rain pulse.
+    func soilWaterFactor(_ moisture: Double) -> Double {
+        let curve = LinearCurve([(parameters.soilMoistureDry, 0), (parameters.soilMoistureMid, 0.5), (parameters.soilMoistureWet, 1)])
+        return curve.value(at: moisture) * parameters.soilMoistureWeight
+    }
+
+    func meanSoilMoisture(endingAt day: DayStamp, weather: WeatherSeries) -> Double? {
+        let values = weather.range(from: day.adding(-(parameters.soilMoistureDays - 1)), to: day).compactMap(\.soilMoisture)
+        guard !values.isEmpty else { return nil }
+        return values.reduce(0, +) / Double(values.count)
     }
 
     func dryDayCount(before day: DayStamp, window: Int, weather: WeatherSeries) -> Int {

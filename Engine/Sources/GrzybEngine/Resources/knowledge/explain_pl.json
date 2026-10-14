@@ -42,5 +42,7 @@
   "param_season_end": "koniec sezonu",
   "flush_title": "Spodziewany wysyp",
   "flush_body": "Za {from}–{to} dni spodziewany wysyp: {species} w regionie {region}",
-  "dry_days": "{days} z ostatnich {window} dni bez opadu (−{penalty} w W_rain)"
+  "dry_days": "{days} z ostatnich {window} dni bez opadu (−{penalty} w W_rain)",
+  "soil_moisture": "Wilgotna gleba ({moisture} m³/m³) podtrzymuje owocnikowanie mimo małych opadów",
+  "drought_relief": "Wilgotne siedlisko łagodzi suszę (woda {from} → {to})"
 }

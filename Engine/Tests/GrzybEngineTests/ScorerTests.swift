@@ -99,20 +99,24 @@ final class AggregationTests: XCTestCase {
         XCTAssertEqual(session.layer(on: day, speciesIds: ids, aggregation: session.generalAggregation).values[1], -1)
     }
 
-    func testHabitatLayerIgnoresDrought() {
+    func testMoistSoilAndMoistSiteSoftenDrought() {
         let day = DayStamp(iso: "2026-10-09")!
-        let dry = WeatherSeries((0..<40).map {
-            WeatherDay(day: day.adding(-$0), precipMm: 0, tminC: 8, tmaxC: 16, soilTempC: 13, soilMoisture: nil, humidity: nil, isForecast: false)
-        })
-        let session = ScoringSession(
-            knowledge: TestSupport.knowledge, species: TestSupport.knowledge.atlasSpecies,
-            geometry: GridGeometry(bbox: BoundingBox(minLon: 21.35, minLat: 52.03, maxLon: 21.37, maxLat: 52.05), cellSizeM: 100),
-            cells: [TestSupport.cell(index: 0)], weather: dry, observations: [], year: 2026
-        )
-        let ids = TestSupport.knowledge.atlasSpecies.map(\.id)
-        XCTAssertLessThan(session.layer(on: day, speciesIds: ids).values[0], 1)
-        let habitat = session.habitatLayer(speciesIds: ids, aggregation: session.generalAggregation).values[0]
-        XCTAssertGreaterThan(habitat, 90)
-        XCTAssertEqual(Double(habitat), session.habitatScore(at: 0, speciesIds: ids, aggregation: session.generalAggregation), accuracy: 0.01)
+        func dry(_ moisture: Double?) -> WeatherSeries {
+            WeatherSeries((0..<40).map {
+                WeatherDay(day: day.adding(-$0), precipMm: 0, tminC: 8, tmaxC: 16, soilTempC: 13, soilMoisture: moisture, humidity: nil, isForecast: false)
+            })
+        }
+        let boletus = TestSupport.species("boletus_edulis")
+        let scorer = Scorer(knowledge: TestSupport.knowledge)
+        let bare = scorer.dynamicFactors(for: boletus, on: day, weather: dry(0.08))
+        XCTAssertEqual(bare.weather.rain, 0)
+        let moist = scorer.dynamicFactors(for: boletus, on: day, weather: dry(0.30))
+        XCTAssertEqual(moist.weather.soilWater, 0.8, accuracy: 1e-9)
+        XCTAssertEqual(moist.weather.rain, 0.8 - 5 * 0.08, accuracy: 1e-9)
+        let freshSite = scorer.staticFactors(for: TestSupport.cell(site: "Bśw"), species: boletus)
+        let moistSite = scorer.staticFactors(for: TestSupport.cell(site: "BMw"), species: boletus)
+        XCTAssertEqual(freshSite.droughtRelief, 0)
+        XCTAssertEqual(moistSite.droughtRelief, 0.25)
+        XCTAssertEqual(bare.water(droughtRelief: moistSite.droughtRelief), 0.25, accuracy: 1e-9)
     }
 }

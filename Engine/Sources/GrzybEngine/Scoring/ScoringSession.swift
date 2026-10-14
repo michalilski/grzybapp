@@ -73,6 +73,8 @@ public final class ScoringSession: @unchecked Sendable {
     private let lookup: [Int32]
     private let staticCache: [String: [Float]]
     private let priors: [String: [Int: PriorValue]]
+    private let relief: [Double]
+    private let reliefLevels: Set<Double>
 
     public init(
         knowledge: KnowledgeBase, species: [SpeciesProfile], geometry: GridGeometry, cells: [CellFeatures],
@@ -94,6 +96,8 @@ public final class ScoringSession: @unchecked Sendable {
         staticCache = Dictionary(uniqueKeysWithValues: species.map { profile in
             (profile.id, cells.map { $0.isExcluded ? 0 : Float(scorer.staticFactors(for: $0, species: profile).product) })
         })
+        relief = cells.map { scorer.droughtRelief($0.effective) }
+        reliefLevels = Set(relief)
         let prior = LocalPrior(parameters: knowledge.parameters.prior)
         priors = Dictionary(uniqueKeysWithValues: species.map { profile in
             (profile.id, prior.field(speciesId: profile.id, observations: observations, geometry: geometry, year: year))
@@ -118,37 +122,17 @@ public final class ScoringSession: @unchecked Sendable {
     }
 
     public func layer(on day: DayStamp, speciesIds: [String], aggregation: PotentialAggregation = .best) -> ScoreLayer {
-        combinedLayer(speciesIds: speciesIds, aggregation: aggregation) { Float(dynamicFactors(for: $0, on: day).product) }
-    }
-
-    /// Where species generally grow: habitat (H·A·T·P·R) and personal prior, ignoring season and weather.
-    public func habitatLayer(speciesIds: [String], aggregation: PotentialAggregation) -> ScoreLayer {
-        combinedLayer(speciesIds: speciesIds, aggregation: aggregation) { _ in 1 }
-    }
-
-    public func habitatScore(at index: Int, speciesIds: [String], aggregation: PotentialAggregation) -> Double {
-        guard let cell = cell(at: index), !cell.isExcluded else { return 0 }
-        let scores = speciesIds.compactMap { id -> Double? in
-            guard let profile = profile(id) else { return nil }
-            let u = priors[id]?[index]?.factor ?? 1
-            return min(100, 100 * scorer.staticFactors(for: cell, species: profile).product * u)
-        }
-        return aggregation.combine(scores)
-    }
-
-    private func combinedLayer(
-        speciesIds: [String], aggregation: PotentialAggregation, dynamicFactor: (SpeciesProfile) -> Float
-    ) -> ScoreLayer {
         var best = [Float](repeating: -1, count: geometry.count)
         var miss = [Float](repeating: 1, count: geometry.count)
         var winners = [Int16](repeating: -1, count: geometry.count)
         for (s, id) in speciesIds.enumerated() {
             guard let profile = profile(id), let statics = staticCache[id] else { continue }
-            let dynamic = dynamicFactor(profile)
+            let dynamic = dynamicFactors(for: profile, on: day)
+            let byRelief = Dictionary(uniqueKeysWithValues: reliefLevels.map { ($0, Float(dynamic.product(droughtRelief: $0))) })
             let prior = priors[id] ?? [:]
             for (i, cell) in cells.enumerated() where statics[i] > 0 {
                 let u = Float(prior[cell.cellIndex]?.factor ?? 1)
-                let score = min(100, 100 * statics[i] * dynamic * u)
+                let score = min(100, 100 * statics[i] * (byRelief[relief[i]] ?? 0) * u)
                 miss[cell.cellIndex] *= 1 - score / 100
                 if score > best[cell.cellIndex] {
                     best[cell.cellIndex] = score

@@ -9,6 +9,7 @@ public struct StaticFactors: Codable, Equatable, Sendable {
     public var terrain: Double
     public var hostInferred: Bool
     public var siteSource: SiteSource
+    public var droughtRelief: Double = 0
 
     public enum SiteSource: String, Codable, Sendable {
         case data, geology, missing
@@ -25,7 +26,16 @@ public struct DynamicFactors: Codable, Equatable, Sendable {
     public var weather: WeatherFactors
 
     public var product: Double {
-        season * weather.rain * weather.temp * weather.frost
+        product(droughtRelief: 0)
+    }
+
+    /// Moist sites keep a share of the missing water factor during dry spells.
+    public func water(droughtRelief: Double) -> Double {
+        weather.rain + (1 - weather.rain) * droughtRelief
+    }
+
+    public func product(droughtRelief: Double) -> Double {
+        season * water(droughtRelief: droughtRelief) * weather.temp * weather.frost
     }
 }
 

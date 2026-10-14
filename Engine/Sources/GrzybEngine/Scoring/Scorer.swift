@@ -13,7 +13,7 @@ public struct Scorer: Sendable {
     private var p: EngineParameters.Scoring { knowledge.parameters.scoring }
 
     public func score(staticFactors: StaticFactors, dynamic: DynamicFactors, user: Double) -> Double {
-        (100 * staticFactors.product * dynamic.product * user).clamped(0, 100)
+        (100 * staticFactors.product * dynamic.product(droughtRelief: staticFactors.droughtRelief) * user).clamped(0, 100)
     }
 
     public func dynamicFactors(for species: SpeciesProfile, on day: DayStamp, weather: WeatherSeries) -> DynamicFactors {
@@ -33,8 +33,14 @@ public struct Scorer: Sendable {
             sitePenalty: sitePenalty(cell, species),
             terrain: terrainFactor(cell, species),
             hostInferred: species.ecology == .mycorrhizal && cell.dominantSpecies == nil,
-            siteSource: site.source
+            siteSource: site.source,
+            droughtRelief: droughtRelief(cell)
         )
+    }
+
+    func droughtRelief(_ cell: CellFeatures) -> Double {
+        guard let moisture = knowledge.sites.moistureClass(of: cell.siteType) else { return 0 }
+        return p.droughtRelief[moisture.rawValue] ?? 0
     }
 
     func seasonFactor(_ species: SpeciesProfile, doy: Int) -> Double {

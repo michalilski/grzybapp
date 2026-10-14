@@ -117,7 +117,7 @@ private struct MapTopBar: View {
             SpeciesChips()
             if let flush = app.map.flushes.first {
                 FlushBanner(flush: flush).screenPadding()
-            } else if app.map.session != nil, !app.map.isBuilding, !app.map.isGeneral,
+            } else if app.map.session != nil, !app.map.isBuilding,
                       Double(app.map.maxScore) < app.services.knowledge.parameters.bands.moderate {
                 LowPotentialHint().screenPadding()
             }
@@ -229,9 +229,7 @@ private struct MapBottomBar: View {
                 CircleIconButton(systemName: "plus", filled: true, action: onAdd)
             }
             .screenPadding()
-            if app.regions.active?.isDownloaded == true, app.map.isGeneral {
-                HabitatCard()
-            } else if app.regions.active?.isDownloaded == true {
+            if app.regions.active?.isDownloaded == true {
                 DaySelector()
             } else {
                 DownloadPrompt(onDownload: onDownload)
@@ -323,34 +321,6 @@ private struct Legend: View {
             }
         }
         .accessibilityLabel("Legenda: umiarkowany, dobry, bardzo dobry")
-    }
-}
-
-/// Bottom card of the general mode: explains the habitat map and today's conditions.
-private struct HabitatCard: View {
-    @Environment(AppModel.self) private var app
-
-    var body: some View {
-        let todayGood = Double(app.map.maxScore) >= app.services.knowledge.parameters.bands.moderate
-        VStack(alignment: .leading, spacing: Theme.Spacing.sm) {
-            HStack {
-                Text("MAPA MIEJSC").font(Theme.Typeface.display(28))
-                Spacer()
-                HeatLegend()
-            }
-            Text("Gdzie grzyby rosną w ogóle: drzewostan, wiek, siedlisko, skraj lasu i Twoje znaleziska – bez pogody.")
-                .font(Theme.Typeface.captionMD)
-                .foregroundStyle(Theme.Palette.charcoal)
-            HStack(spacing: Theme.Spacing.sm) {
-                Circle().fill(todayGood ? Theme.Palette.success : Theme.Palette.signal).frame(width: 8, height: 8)
-                Text(todayGood ? "Warunki dziś: warto iść – wybierz gatunek, by zobaczyć gdzie" : "Warunki dziś: słabe (za sucho lub za zimno)")
-                    .font(Theme.Typeface.captionMD)
-                    .foregroundStyle(Theme.Palette.ink)
-            }
-        }
-        .padding(Theme.Spacing.lg)
-        .background(Theme.Palette.canvas, in: RoundedRectangle(cornerRadius: Theme.Radius.field))
-        .screenPadding()
     }
 }
 

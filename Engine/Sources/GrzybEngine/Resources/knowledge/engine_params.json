@@ -14,7 +14,17 @@
     "edge_distance_m": 100,
     "terrain_min": 0.7,
     "terrain_max": 1.2,
-    "general_diversity_bonus": 0.35
+    "general_diversity_bonus": 0.35,
+    "soil_moisture_days": 10,
+    "soil_moisture_dry": 0.1,
+    "soil_moisture_mid": 0.2,
+    "soil_moisture_wet": 0.3,
+    "soil_moisture_weight": 0.8,
+    "drought_relief": {
+      "moist": 0.25,
+      "wet": 0.35,
+      "riparian": 0.35
+    }
   },
   "bands": {
     "moderate": 21,

@@ -18,6 +18,12 @@ public struct EngineParameters: Codable, Equatable, Sendable {
         public var terrainMin: Double
         public var terrainMax: Double
         public var generalDiversityBonus: Double
+        public var soilMoistureDays: Int
+        public var soilMoistureDry: Double
+        public var soilMoistureMid: Double
+        public var soilMoistureWet: Double
+        public var soilMoistureWeight: Double
+        public var droughtRelief: [String: Double]
 
         enum CodingKeys: String, CodingKey {
             case seasonFloor = "season_floor"
@@ -35,6 +41,12 @@ public struct EngineParameters: Codable, Equatable, Sendable {
             case terrainMin = "terrain_min"
             case terrainMax = "terrain_max"
             case generalDiversityBonus = "general_diversity_bonus"
+            case soilMoistureDays = "soil_moisture_days"
+            case soilMoistureDry = "soil_moisture_dry"
+            case soilMoistureMid = "soil_moisture_mid"
+            case soilMoistureWet = "soil_moisture_wet"
+            case soilMoistureWeight = "soil_moisture_weight"
+            case droughtRelief = "drought_relief"
         }
     }
 

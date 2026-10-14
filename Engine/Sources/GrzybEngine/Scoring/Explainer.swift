@@ -135,7 +135,16 @@ public struct Explainer: Sendable {
             "rain": PolishNumber.integer(w.rainMm), "from": String(needs.windowNear),
             "to": String(needs.windowFar), "value": fmt(w.rain),
         ]
-        var reasons = [reason("W_rain", w.rainBase, text(w.rainBase >= goodThreshold ? "rain_good" : "rain_low", input, rainValues))]
+        let rainOnly = w.rainBase > w.soilWater || w.soilMoisture == nil
+        var reasons = [reason("W_rain", w.rainBase, text(rainOnly && w.rainBase >= goodThreshold ? "rain_good" : "rain_low", input, rainValues), positive: rainOnly ? nil : false)]
+        if !rainOnly, let moisture = w.soilMoisture {
+            reasons.append(reason("W_soil", w.soilWater, text("soil_moisture", input, ["moisture": PolishNumber.format(moisture, decimals: 2)]), positive: true))
+        }
+        let relief = input.staticFactors.droughtRelief
+        if relief > 0, w.rain < 1 {
+            let values = ["from": fmt(w.rain), "to": fmt(input.dynamic.water(droughtRelief: relief))]
+            reasons.append(reason("W_relief", relief, text("drought_relief", input, values), positive: true))
+        }
         if w.dryPenalty > 0 {
             let values = ["days": String(w.dryDays), "window": String(needs.dryWindowDays), "penalty": fmt(w.dryPenalty)]
             reasons.append(reason("W_dry", 1 - w.dryPenalty, text("dry_days", input, values), positive: false))
