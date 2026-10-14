@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1375B6FAAAA25241710B8CD7 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4954FAB719B3E897682A1A1 /* MapModel.swift */; };
+		22BB67123B1A8557F1DBE5BF /* MapLibre in Frameworks */ = {isa = PBXBuildFile; productRef = 66E7AE5CE0FE29369BEE2FD4 /* MapLibre */; };
+		34F4FFAB90D4B18B524FA06C /* OfflineTilesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001151D913C03290C6D992CC /* OfflineTilesService.swift */; };
+		3DDA3D7A6143AEC56D05F560 /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A716994DA94A64FE41B7BD8F /* BebasNeue-Regular.ttf */; };
+		3E35E5CC9DBC871B205C636F /* SpeciesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6D3396B2BACCEF20A2DB83 /* SpeciesListView.swift */; };
+		4C59557CD41A7AA9059A13C6 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1DDD8650FAD95E76465281 /* AppModel.swift */; };
+		5DC7F6ECE2B8C1B5150F776F /* ScoreRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC5E0C34C217ECD08664E06 /* ScoreRenderer.swift */; };
+		70ADF1E0C1EE133A866F89DE /* RegionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6BE4BDB653005B081A9F06 /* RegionsModel.swift */; };
+		80A663AD3DE3A0872A6AA34C /* RegionDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95D3CD1E56ADC4449D6054 /* RegionDownloader.swift */; };
+		86A5AB4E51A566E5258E8E2D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF501E9C7F33B8352548E0 /* Theme.swift */; };
+		87B0955710218CE3AC62CA80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0A66EB70EB906095A1F6A3 /* Assets.xcassets */; };
+		887756ACBF95C01FED406BD7 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A35EEF81E909F8B279463F /* AppServices.swift */; };
+		8B31D89CBE8F804B0FFA0384 /* GrzybyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7BD3B6787B8C01AFD21809 /* GrzybyApp.swift */; };
+		92F117D66F049285784D6EA3 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCA1365B46C94FC8F8E1F0D /* NotificationService.swift */; };
+		9D3C6333C8A96FA86BE3496E /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DA4A9E2A6B81007184694D /* Preferences.swift */; };
+		A055FE2D63A8395858B5E29E /* GrzybEngine in Frameworks */ = {isa = PBXBuildFile; productRef = FE0E742447792CC15D578358 /* GrzybEngine */; };
+		A15E642C7B130446082016A9 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B704D2461BF1EE0B58B02A /* LocationService.swift */; };
+		A1CBA74AE0E1AA72E02CB44D /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0589652E3CC81F4D2694D /* JournalView.swift */; };
+		A453F82A2EBC159901F23349 /* SpeciesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8310EDAA668048DB5355916 /* SpeciesModel.swift */; };
+		B2EE7A80DA50C2691F565ACD /* SpeciesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB39D866FC7F59620334AD18 /* SpeciesDetailView.swift */; };
+		B45DF88757F77F7E37E3A619 /* GrzybData in Frameworks */ = {isa = PBXBuildFile; productRef = 800C82A1354B2795C96A8B2B /* GrzybData */; };
+		BB6D5D8E1CBCBBA1421A6BD0 /* JournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC59379DA09440487F151C7A /* JournalModel.swift */; };
+		BD065695CA72FC873179592C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD84B7EE30B07F283E6D5FA0 /* OnboardingView.swift */; };
+		C8155A8042259EC3706BD59F /* GrzybStore in Frameworks */ = {isa = PBXBuildFile; productRef = 0420B71D67EC25045BDF9BF8 /* GrzybStore */; };
+		C89687B8CC75B91EFD274CB5 /* AddObservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C448A2A165C2CEEE23D7246 /* AddObservationView.swift */; };
+		D7945BD1E5E539B7485E3016 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604B912DB2A88957C7AA5DF0 /* CompassView.swift */; };
+		E12CC26153C5F6D0F036E501 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6263BB597673597540386 /* Components.swift */; };
+		F03222CA1787CBCB7E761B79 /* CellDetailsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6262F4B240E5593F783E9055 /* CellDetailsSheet.swift */; };
+		F95D501D2C38492F79C1BF4F /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8B6C2156357E0644FDFA7F /* MapScreen.swift */; };
+		FC449B542D40E242E6DBC5AA /* RegionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CD64FC9A02EC9379099DDA /* RegionsView.swift */; };
+		FDEA0AB8E53BDA7FFDC7B294 /* ForestMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36489C8AC3EE31C1D5453C2D /* ForestMapView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		001151D913C03290C6D992CC /* OfflineTilesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineTilesService.swift; sourceTree = "<group>"; };
+		23BF501E9C7F33B8352548E0 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		2EC5E0C34C217ECD08664E06 /* ScoreRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRenderer.swift; sourceTree = "<group>"; };
+		2FDC9C79DFEA7D943A22F5C2 /* Grzyby.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Grzyby.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		36489C8AC3EE31C1D5453C2D /* ForestMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForestMapView.swift; sourceTree = "<group>"; };
+		3C6BE4BDB653005B081A9F06 /* RegionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsModel.swift; sourceTree = "<group>"; };
+		3FA6263BB597673597540386 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		4F1DDD8650FAD95E76465281 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		604B912DB2A88957C7AA5DF0 /* CompassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
+		61BD6F2254DB03F4878DD278 /* Engine */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Engine; path = Engine; sourceTree = SOURCE_ROOT; };
+		6262F4B240E5593F783E9055 /* CellDetailsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDetailsSheet.swift; sourceTree = "<group>"; };
+		73CD64FC9A02EC9379099DDA /* RegionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsView.swift; sourceTree = "<group>"; };
+		7C448A2A165C2CEEE23D7246 /* AddObservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObservationView.swift; sourceTree = "<group>"; };
+		7C95D3CD1E56ADC4449D6054 /* RegionDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionDownloader.swift; sourceTree = "<group>"; };
+		7E6D3396B2BACCEF20A2DB83 /* SpeciesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesListView.swift; sourceTree = "<group>"; };
+		83DA4A9E2A6B81007184694D /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		92A35EEF81E909F8B279463F /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
+		9D7BD3B6787B8C01AFD21809 /* GrzybyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrzybyApp.swift; sourceTree = "<group>"; };
+		A716994DA94A64FE41B7BD8F /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
+		BD84B7EE30B07F283E6D5FA0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		C4954FAB719B3E897682A1A1 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		CBCA1365B46C94FC8F8E1F0D /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		DBCA6F606E95F0AF5AA368F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E0B704D2461BF1EE0B58B02A /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		EA8B6C2156357E0644FDFA7F /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
+		EB0A66EB70EB906095A1F6A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EB39D866FC7F59620334AD18 /* SpeciesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesDetailView.swift; sourceTree = "<group>"; };
+		F7D0589652E3CC81F4D2694D /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
+		F8310EDAA668048DB5355916 /* SpeciesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesModel.swift; sourceTree = "<group>"; };
+		FC59379DA09440487F151C7A /* JournalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8944321B0F58CEB317BBC2B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A055FE2D63A8395858B5E29E /* GrzybEngine in Frameworks */,
+				B45DF88757F77F7E37E3A619 /* GrzybData in Frameworks */,
+				C8155A8042259EC3706BD59F /* GrzybStore in Frameworks */,
+				22BB67123B1A8557F1DBE5BF /* MapLibre in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		075F7EECE9C4F01A176325D8 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				BD84B7EE30B07F283E6D5FA0 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		0D6BE27798656AEBA5A0DF71 /* Observation */ = {
+			isa = PBXGroup;
+			children = (
+				7C448A2A165C2CEEE23D7246 /* AddObservationView.swift */,
+			);
+			path = Observation;
+			sourceTree = "<group>";
+		};
+		27178ECAC5F936CF9431600D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EB0A66EB70EB906095A1F6A3 /* Assets.xcassets */,
+				82B078E7C6D19293C3FB0246 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3438ABBB8696E5EC79C56A7B /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				F7D0589652E3CC81F4D2694D /* JournalView.swift */,
+			);
+			path = Journal;
+			sourceTree = "<group>";
+		};
+		4765A723AE161A1433FC9746 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9D7BD3B6787B8C01AFD21809 /* GrzybyApp.swift */,
+				DBCA6F606E95F0AF5AA368F2 /* Info.plist */,
+				6037342398EA9D669945454B /* Core */,
+				C595ED8302BC99B5F4B89F1B /* Design */,
+				A7239BBC63FF6F2E89CC91AD /* Features */,
+				49ED2CBBF2CB2CD3B2516AE9 /* Models */,
+				27178ECAC5F936CF9431600D /* Resources */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		49ED2CBBF2CB2CD3B2516AE9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4F1DDD8650FAD95E76465281 /* AppModel.swift */,
+				FC59379DA09440487F151C7A /* JournalModel.swift */,
+				C4954FAB719B3E897682A1A1 /* MapModel.swift */,
+				83DA4A9E2A6B81007184694D /* Preferences.swift */,
+				3C6BE4BDB653005B081A9F06 /* RegionsModel.swift */,
+				F8310EDAA668048DB5355916 /* SpeciesModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6037342398EA9D669945454B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				92A35EEF81E909F8B279463F /* AppServices.swift */,
+				E0B704D2461BF1EE0B58B02A /* LocationService.swift */,
+				CBCA1365B46C94FC8F8E1F0D /* NotificationService.swift */,
+				001151D913C03290C6D992CC /* OfflineTilesService.swift */,
+				7C95D3CD1E56ADC4449D6054 /* RegionDownloader.swift */,
+				2EC5E0C34C217ECD08664E06 /* ScoreRenderer.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		73775EE195DD7B2A7E1C8FE8 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				36489C8AC3EE31C1D5453C2D /* ForestMapView.swift */,
+				EA8B6C2156357E0644FDFA7F /* MapScreen.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		7C7C24AD233E586BA2F72587 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				61BD6F2254DB03F4878DD278 /* Engine */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		82B078E7C6D19293C3FB0246 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A716994DA94A64FE41B7BD8F /* BebasNeue-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		98F8F24CC07C7CD0A5A98070 /* Regions */ = {
+			isa = PBXGroup;
+			children = (
+				73CD64FC9A02EC9379099DDA /* RegionsView.swift */,
+			);
+			path = Regions;
+			sourceTree = "<group>";
+		};
+		A7239BBC63FF6F2E89CC91AD /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				F1128E9F8A18BE764D729DC5 /* CellDetails */,
+				3438ABBB8696E5EC79C56A7B /* Journal */,
+				73775EE195DD7B2A7E1C8FE8 /* Map */,
+				AB66AFAA04F1A2A6A1180A1D /* Navigate */,
+				0D6BE27798656AEBA5A0DF71 /* Observation */,
+				075F7EECE9C4F01A176325D8 /* Onboarding */,
+				98F8F24CC07C7CD0A5A98070 /* Regions */,
+				C9C9340CD8DB545074B7C53F /* Species */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		AB66AFAA04F1A2A6A1180A1D /* Navigate */ = {
+			isa = PBXGroup;
+			children = (
+				604B912DB2A88957C7AA5DF0 /* CompassView.swift */,
+			);
+			path = Navigate;
+			sourceTree = "<group>";
+		};
+		C595ED8302BC99B5F4B89F1B /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				3FA6263BB597673597540386 /* Components.swift */,
+				23BF501E9C7F33B8352548E0 /* Theme.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		C9C9340CD8DB545074B7C53F /* Species */ = {
+			isa = PBXGroup;
+			children = (
+				EB39D866FC7F59620334AD18 /* SpeciesDetailView.swift */,
+				7E6D3396B2BACCEF20A2DB83 /* SpeciesListView.swift */,
+			);
+			path = Species;
+			sourceTree = "<group>";
+		};
+		D275DCC48E5419C5AF44F2F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FDC9C79DFEA7D943A22F5C2 /* Grzyby.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1128E9F8A18BE764D729DC5 /* CellDetails */ = {
+			isa = PBXGroup;
+			children = (
+				6262F4B240E5593F783E9055 /* CellDetailsSheet.swift */,
+			);
+			path = CellDetails;
+			sourceTree = "<group>";
+		};
+		F7B3B7661D694DE9E8F55C68 = {
+			isa = PBXGroup;
+			children = (
+				4765A723AE161A1433FC9746 /* App */,
+				7C7C24AD233E586BA2F72587 /* Packages */,
+				D275DCC48E5419C5AF44F2F4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CBC1B12BB547C945B73D9470 /* Grzyby */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 663B3A1785EF8A79CE30DC87 /* Build configuration list for PBXNativeTarget "Grzyby" */;
+			buildPhases = (
+				D460691689E48BC4C7DD617C /* Sources */,
+				FE955ACB670E9F52BECCF1EF /* Resources */,
+				8944321B0F58CEB317BBC2B0 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Grzyby;
+			packageProductDependencies = (
+				FE0E742447792CC15D578358 /* GrzybEngine */,
+				800C82A1354B2795C96A8B2B /* GrzybData */,
+				0420B71D67EC25045BDF9BF8 /* GrzybStore */,
+				66E7AE5CE0FE29369BEE2FD4 /* MapLibre */,
+			);
+			productName = Grzyby;
+			productReference = 2FDC9C79DFEA7D943A22F5C2 /* Grzyby.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8DB30CCDFA2C739D08C3C8CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					CBC1B12BB547C945B73D9470 = {
+						DevelopmentTeam = N5H5R9A2K2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EEFB9D935993F742B83C8590 /* Build configuration list for PBXProject "Grzyby" */;
+			developmentRegion = pl;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				pl,
+			);
+			mainGroup = F7B3B7661D694DE9E8F55C68;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B1552F369F9E149B67A9CBF9 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */,
+				910465CEB07BAA83618266EB /* XCLocalSwiftPackageReference "Engine" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D275DCC48E5419C5AF44F2F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CBC1B12BB547C945B73D9470 /* Grzyby */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE955ACB670E9F52BECCF1EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87B0955710218CE3AC62CA80 /* Assets.xcassets in Resources */,
+				3DDA3D7A6143AEC56D05F560 /* BebasNeue-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D460691689E48BC4C7DD617C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C89687B8CC75B91EFD274CB5 /* AddObservationView.swift in Sources */,
+				4C59557CD41A7AA9059A13C6 /* AppModel.swift in Sources */,
+				887756ACBF95C01FED406BD7 /* AppServices.swift in Sources */,
+				F03222CA1787CBCB7E761B79 /* CellDetailsSheet.swift in Sources */,
+				D7945BD1E5E539B7485E3016 /* CompassView.swift in Sources */,
+				E12CC26153C5F6D0F036E501 /* Components.swift in Sources */,
+				FDEA0AB8E53BDA7FFDC7B294 /* ForestMapView.swift in Sources */,
+				8B31D89CBE8F804B0FFA0384 /* GrzybyApp.swift in Sources */,
+				BB6D5D8E1CBCBBA1421A6BD0 /* JournalModel.swift in Sources */,
+				A1CBA74AE0E1AA72E02CB44D /* JournalView.swift in Sources */,
+				A15E642C7B130446082016A9 /* LocationService.swift in Sources */,
+				1375B6FAAAA25241710B8CD7 /* MapModel.swift in Sources */,
+				F95D501D2C38492F79C1BF4F /* MapScreen.swift in Sources */,
+				92F117D66F049285784D6EA3 /* NotificationService.swift in Sources */,
+				34F4FFAB90D4B18B524FA06C /* OfflineTilesService.swift in Sources */,
+				BD065695CA72FC873179592C /* OnboardingView.swift in Sources */,
+				9D3C6333C8A96FA86BE3496E /* Preferences.swift in Sources */,
+				80A663AD3DE3A0872A6AA34C /* RegionDownloader.swift in Sources */,
+				70ADF1E0C1EE133A866F89DE /* RegionsModel.swift in Sources */,
+				FC449B542D40E242E6DBC5AA /* RegionsView.swift in Sources */,
+				5DC7F6ECE2B8C1B5150F776F /* ScoreRenderer.swift in Sources */,
+				B2EE7A80DA50C2691F565ACD /* SpeciesDetailView.swift in Sources */,
+				3E35E5CC9DBC871B205C636F /* SpeciesListView.swift in Sources */,
+				A453F82A2EBC159901F23349 /* SpeciesModel.swift in Sources */,
+				86A5AB4E51A566E5258E8E2D /* Theme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0822CC6D7117FD83036C5B3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		349959832834A82B1F872A83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N5H5R9A2K2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michalilski.grzybapp;
+				PRODUCT_NAME = Grzyby;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		53B1406E5E56B7E650910A99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N5H5R9A2K2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michalilski.grzybapp;
+				PRODUCT_NAME = Grzyby;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		7915AB3441F3A085C36D367F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		663B3A1785EF8A79CE30DC87 /* Build configuration list for PBXNativeTarget "Grzyby" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349959832834A82B1F872A83 /* Debug */,
+				53B1406E5E56B7E650910A99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EEFB9D935993F742B83C8590 /* Build configuration list for PBXProject "Grzyby" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7915AB3441F3A085C36D367F /* Debug */,
+				0822CC6D7117FD83036C5B3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		910465CEB07BAA83618266EB /* XCLocalSwiftPackageReference "Engine" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Engine;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B1552F369F9E149B67A9CBF9 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maplibre/maplibre-gl-native-distribution";
+			requirement = {
+				kind = exactVersion;
+				version = 6.31.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0420B71D67EC25045BDF9BF8 /* GrzybStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GrzybStore;
+		};
+		66E7AE5CE0FE29369BEE2FD4 /* MapLibre */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1552F369F9E149B67A9CBF9 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */;
+			productName = MapLibre;
+		};
+		800C82A1354B2795C96A8B2B /* GrzybData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GrzybData;
+		};
+		FE0E742447792CC15D578358 /* GrzybEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GrzybEngine;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8DB30CCDFA2C739D08C3C8CC /* Project object */;
+}

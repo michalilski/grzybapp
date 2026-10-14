@@ -1,0 +1,43 @@
+{
+  "scoring": {
+    "season_floor": 0.05,
+    "uncertainty_weight": 0.7,
+    "missing_site_tsl": 0.35,
+    "unknown_age_factor": 0.7,
+    "moisture_mismatch": 0.6,
+    "degraded_factor": 0.9,
+    "forecast_rain_factor": 0.7,
+    "frost_floor": 0.2,
+    "dry_day_threshold_mm": 1.0,
+    "soil_temp_days": 5,
+    "missing_weather_factor": 0.5,
+    "edge_distance_m": 100,
+    "terrain_min": 0.7,
+    "terrain_max": 1.2
+  },
+  "bands": { "moderate": 21, "good": 46, "very_good": 71 },
+  "prior": {
+    "sigma_m": 150,
+    "radius_sigmas": 3,
+    "amount_weights": [0.3, 0.5, 0.8],
+    "empty_weight": -0.4,
+    "year_decay": [1.0, 0.8, 0.6, 0.4],
+    "min_factor": 0.5,
+    "max_factor": 2.0,
+    "negative_min_score": 40
+  },
+  "calibration": {
+    "every_observations": 10,
+    "majority_share": 0.6,
+    "step": 0.1,
+    "max_value": 1.0,
+    "min_value": 0.2,
+    "season_outside_count": 3,
+    "season_step_days": 7,
+    "lag_tolerance_days": 3,
+    "lag_step_days": 2,
+    "rain_event_mm": 10
+  },
+  "flush": { "max_rain_days": 3, "warm_days": 4 },
+  "grid": { "cell_size_m": 100, "max_region_km": 30, "tile_km": 5 }
+}

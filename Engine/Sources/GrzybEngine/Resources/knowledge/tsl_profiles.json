@@ -1,0 +1,20 @@
+{
+  "moisture": {
+    "Bs": "dry", "Bśw": "fresh", "Bw": "moist", "Bb": "wet",
+    "BMśw": "fresh", "BMw": "moist", "BMb": "wet",
+    "LMśw": "fresh", "LMw": "moist", "LMb": "wet",
+    "Lśw": "fresh", "Lw": "moist", "Lł": "riparian",
+    "Ol": "wet", "OlJ": "riparian"
+  },
+  "aliases": { "BG": "Bśw", "BWG": "Bw", "BbG": "Bb", "OlJwyż": "OlJ", "OlJG": "OlJ" },
+  "strip_tokens": ["wyż", "G"],
+  "geology_fallback": [
+    { "contains": "t", "site_types": ["Bb", "Ol"] },
+    { "contains": "g", "site_types": ["LMśw", "Lśw"] },
+    { "contains": "p", "site_types": ["Bśw", "BMśw"] }
+  ],
+  "forest_type_species": {
+    "So": "SO", "Św": "ŚW", "Jd": "JD", "Md": "MD", "Bk": "BK", "Db": "DB", "Gb": "GB",
+    "Brz": "BRZ", "Ol": "OL", "Os": "OS", "Tp": "TP", "Js": "JS", "Lp": "LP", "Kl": "KL", "Wz": "WZ", "Jw": "JW"
+  }
+}

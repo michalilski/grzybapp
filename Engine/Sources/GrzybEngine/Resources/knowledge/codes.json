@@ -1,0 +1,25 @@
+{
+  "tree_species": {
+    "SO": "Sosna", "ŚW": "Świerk", "JD": "Jodła", "MD": "Modrzew", "DG": "Daglezja", "BK": "Buk", "DB": "Dąb",
+    "GB": "Grab", "BRZ": "Brzoza", "OL": "Olsza", "OS": "Osika", "TP": "Topola", "JS": "Jesion", "LP": "Lipa",
+    "KL": "Klon", "JW": "Jawor", "WZ": "Wiąz", "AK": "Robinia", "WB": "Wierzba", "CZR": "Czeremcha", "JRZ": "Jarząb", "DBC": "Dąb czerwony"
+  },
+  "tree_species_genitive": {
+    "SO": "sosny", "ŚW": "świerka", "JD": "jodły", "MD": "modrzewia", "BK": "buka", "DB": "dębu", "GB": "grabu",
+    "BRZ": "brzozy", "OL": "olszy", "OS": "osiki", "TP": "topoli", "JS": "jesionu", "LP": "lipy"
+  },
+  "site_types": {
+    "Bs": "Bór suchy", "Bśw": "Bór świeży", "Bw": "Bór wilgotny", "Bb": "Bór bagienny",
+    "BMśw": "Bór mieszany świeży", "BMw": "Bór mieszany wilgotny", "BMb": "Bór mieszany bagienny",
+    "LMśw": "Las mieszany świeży", "LMw": "Las mieszany wilgotny", "LMb": "Las mieszany bagienny",
+    "Lśw": "Las świeży", "Lw": "Las wilgotny", "Lł": "Las łęgowy", "Ol": "Ols", "OlJ": "Ols jesionowy"
+  },
+  "moisture": { "dry": "sucha", "fresh": "świeża", "moist": "wilgotna", "wet": "bagienna", "riparian": "łęgowa" },
+  "stand_structure": {
+    "DRZEW": "Drzewostan jednopiętrowy", "2 PIĘTR": "Drzewostan dwupiętrowy", "KO": "Klasa odnowienia",
+    "KDO": "Klasa do odnowienia", "BP": "Budowa przerębowa", "SP": "Budowa przerębowa", "DRZEW W": "Drzewostan wielopiętrowy"
+  },
+  "terrain_overrides": {
+    "clearcut": "Wycięte", "wet": "Podmokłe", "young": "Młodnik", "plowed": "Zaorane"
+  }
+}

@@ -1,0 +1,1083 @@
+[
+  {
+    "id": "boletus_edulis",
+    "name_pl": "Borowik szlachetny",
+    "name_lat": "Boletus edulis",
+    "edible": true,
+    "ecology": "mycorrhizal",
+    "hosts": {
+      "SO": 1.0,
+      "ŚW": 0.9,
+      "DB": 0.8,
+      "BK": 0.8,
+      "JD": 0.5,
+      "BRZ": 0.4,
+      "GB": 0.3
+    },
+    "tsl": {
+      "Bśw": 1.0,
+      "BMśw": 1.0,
+      "LMśw": 0.8,
+      "BMw": 0.6,
+      "Lśw": 0.5,
+      "Bw": 0.5,
+      "LMw": 0.4,
+      "Bs": 0.3,
+      "Bb": 0.1,
+      "Ol": 0.0,
+      "OlJ": 0.0,
+      "Lł": 0.0
+    },
+    "moisture_pref": [
+      "fresh",
+      "moist"
+    ],
+    "arable_formerly_penalty": 0.3,
+    "season": {
+      "start_doy": 170,
+      "peak_lo_doy": 240,
+      "peak_hi_doy": 290,
+      "end_doy": 320
+    },
+    "weather": {
+      "rain_window_days": [
+        7,
+        21
+      ],
+      "rain_min_mm": 25,
+      "rain_opt_mm": 50,
+      "lag_days": [
+        8,
+        14
+      ],
+      "soil_temp_c": {
+        "min": 8,
+        "opt_lo": 12,
+        "opt_hi": 20,
+        "max": 24
+      },
+      "frost_kill_c": -2,
+      "frost_recovery_days": 10,
+      "dry_day_penalty": 0.08,
+      "dry_window_days": 5
+    },
+    "terrain": {
+      "edge_bonus": 0.1,
+      "interior_factor": 1.0
+    },
+    "struct_bonus": {},
+    "lookalikes": [
+      {
+        "name": "Goryczak żółciowy (Tylopilus felleus)",
+        "text": "Niejadalny, bardzo gorzki. Różowiejące rurki i ciemna siateczka na trzonie."
+      }
+    ],
+    "explain": {},
+    "source": "atlas",
+    "stand_age": {
+      "min": 25,
+      "opt_lo": 50,
+      "opt_hi": 120,
+      "max": 200
+    }
+  },
+  {
+    "id": "imleria_badia",
+    "name_pl": "Podgrzybek brunatny",
+    "name_lat": "Imleria badia",
+    "edible": true,
+    "ecology": "mycorrhizal",
+    "hosts": {
+      "SO": 1.0,
+      "ŚW": 1.0,
+      "MD": 0.5,
+      "BK": 0.4,
+      "DB": 0.3,
+      "BRZ": 0.2
+    },
+    "tsl": {
+      "Bśw": 1.0,
+      "BMśw": 1.0,
+      "BMw": 0.9,
+      "Bw": 0.8,
+      "LMśw": 0.5,
+      "LMw": 0.4,
+      "Bs": 0.4,
+      "Bb": 0.3
+    },
+    "moisture_pref": [
+      "fresh",
+      "moist"
+    ],
+    "arable_formerly_penalty": 0.3,
+    "season": {
+      "start_doy": 185,
+      "peak_lo_doy": 245,
+      "peak_hi_doy": 295,
+      "end_doy": 325
+    },
+    "weather": {
+      "rain_window_days": [
+        6,
+        18
+      ],
+      "rain_min_mm": 20,
+      "rain_opt_mm": 40,
+      "lag_days": [
+        7,
+        12
+      ],
+      "soil_temp_c": {
+        "min": 7,
+        "opt_lo": 11,
+        "opt_hi": 18,
+        "max": 23
+      },
+      "frost_kill_c": -2,
+      "frost_recovery_days": 10,
+      "dry_day_penalty": 0.07,
+      "dry_window_days": 5
+    },
+    "terrain": {
+      "edge_bonus": 0.0,
+      "interior_factor": 1.0
+    },
+    "struct_bonus": {},
+    "lookalikes": [
+      {
+        "name": "Goryczak żółciowy (Tylopilus felleus)",
+        "text": "Niejadalny, bardzo gorzki. Różowiejące rurki i ciemna siateczka na trzonie."
+      }
+    ],
+    "explain": {},
+    "source": "atlas",
+    "stand_age": {
+      "min": 20,
+      "opt_lo": 30,
+      "opt_hi": 100,
+      "max": 160
+    }
+  },
+  {
+    "id": "leccinum_scabrum",
+    "name_pl": "Koźlarz babka",
+    "name_lat": "Leccinum scabrum",
+    "edible": true,
+    "ecology": "mycorrhizal",
+    "hosts": {
+      "BRZ": 1.0
+    },
+    "tsl": {
+      "BMw": 1.0,
+      "LMw": 1.0,
+      "Bw": 0.9,
+      "BMśw": 0.8,
+      "LMśw": 0.7,
+      "Bb": 0.6,
+      "BMb": 0.6,
+      "Lw": 0.6,
+      "Bśw": 0.5
+    },
+    "moisture_pref": [
+      "fresh",
+      "moist",
+      "wet"
+    ],
+    "arable_formerly_penalty": 0.1,
+    "season": {
+      "start_doy": 160,
+      "peak_lo_doy": 215,
+      "peak_hi_doy": 265,
+      "end_doy": 300
+    },
+    "weather": {
+      "rain_window_days": [
+        5,
+        15
+      ],
+      "rain_min_mm": 20,
+      "rain_opt_mm": 40,
+      "lag_days": [
+        7,
+        10
+      ],
+      "soil_temp_c": {
+        "min": 9,
+        "opt_lo": 13,
+        "opt_hi": 20,
+        "max": 25
+      },
+      "frost_kill_c": -2,
+      "frost_recovery_days": 10,
+      "dry_day_penalty": 0.08,
+      "dry_window_days": 5
+    },
+    "terrain": {
+      "edge_bonus": 0.0,
+      "interior_factor": 1.0
+    },
+    "struct_bonus": {},
+    "lookalikes": [],
+    "explain": {},
+    "source": "atlas",
+    "stand_age": {
+      "min": 10,
+      "opt_lo": 20,
+      "opt_hi": 70,
+      "max": 120
+    }
+  },
+  {
+    "id": "leccinum_aurantiacum",
+    "name_pl": "Koźlarz czerwony",
+    "name_lat": "Leccinum aurantiacum",
+    "edible": true,
+    "ecology": "mycorrhizal",
+    "hosts": {
+      "OS": 1.0,
+      "TP": 0.8
+    },
+    "tsl": {
+      "LMśw": 1.0,
+      "Lśw": 0.9,
+      "LMw": 0.9,
+      "Lw": 0.8,
+      "BMśw": 0.5
+    },
+    "moisture_pref": [
+      "fresh",
+      "moist"
+    ],
+    "arable_formerly_penalty": 0.2,
+    "season": {
+      "start_doy": 160,
+      "peak_lo_doy": 215,
+      "peak_hi_doy": 265,
+      "end_doy": 300
+    },
+    "weather": {
+      "rain_window_days": [
+        5,
+        15
+      ],
+      "rain_min_mm": 20,
+      "rain_opt_mm": 40,
+      "lag_days": [
+        7,
+        10
+      ],
+      "soil_temp_c": {
+        "min": 9,
+        "opt_lo": 13,
+        "opt_hi": 20,
+        "max": 25
+      },
+      "frost_kill_c": -2,
+      "frost_recovery_days": 10,
+      "dry_day_penalty": 0.08,
+      "dry_window_days": 5
+    },
+    "terrain": {
+      "edge_bonus": 0.0,
+      "interior_factor": 1.0
+    },
+    "struct_bonus": {},
+    "lookalikes": [],
+    "explain": {},
+    "source": "atlas",
+    "stand_age": {
+      "min": 10,
+      "opt_lo": 20,
+      "opt_hi": 60,
+      "max": 100
+    }
+  },
+  {
+    "id": "suillus_luteus",
+    "name_pl": "Maślak zwyczajny",
+    "name_lat": "Suillus luteus",
+    "edible": true,
+    "ecology": "mycorrhizal",
+    "hosts": {
+      "SO": 1.0
+    },
+    "tsl": {
+      "Bśw": 1.0,
+      "BMśw": 0.9,
+      "Bs": 0.8,
+      "Bw": 0.5,
+      "LMśw": 0.4
+    },
+    "moisture_pref": [
+      "dry",
+      "fresh"
+    ],
+    "arable_formerly_penalty": 0.0,
+    "season": {
+      "start_doy": 190,
+      "peak_lo_doy": 245,
+      "peak_hi_doy": 295,
+      "end_doy": 325
+    },
+    "weather": {
+      "rain_window_days": [
+        4,
+        12
+      ],
+      "rain_min_mm": 15,
+      "rain_opt_mm": 30,
+      "lag_days": [
+        5,
+        8
+      ],
+      "soil_temp_c": {
+        "min": 8,
+        "opt_lo": 12,
+        "opt_hi": 20,
+        "max": 24
+      },
+      "frost_kill_c": -2,
+      "frost_recovery_days": 10,
+      "dry_day_penalty": 0.08,
+      "dry_window_days": 5
+    },
+    "terrain": {
+      "edge_bonus": 0.1,
+      "interior_factor": 1.0
+    },
+    "struct_bonus": {},
+    "lookalikes": [],
+    "explain": {},
+    "source": "atlas",
+    "stand_age": {
+      "min": 5,
+      "opt_lo": 10,
+      "opt_hi": 40,
+      "max": 70
+    }
+  },
+  {
+    "id": "suillus_bovinus",
+    "name_pl": "Maślak sitarz",
+    "name_lat": "Suillus bovinus",
+    "edible": true,
+    "ecology": "mycorrhizal",
+    "hosts": {
+      "SO": 1.0
+    },
+    "tsl": {
+      "Bśw": 1.0,
+      "Bs": 0.9,
+      "Bw": 0.7,
+      "BMśw": 0.6,
+      "Bb": 0.3
+    },
+    "moisture_pref": [
+      "dry",
+      "fresh",
+      "moist"
+    ],
+    "arable_formerly_penalty": 0.1,
+    "season": {
+      "start_doy": 190,
+      "peak_lo_doy": 245,
+      "peak_hi_doy": 295,
+      "end_doy": 325
+    },
+    "weather": {
+      "rain_window_days": [
+        4,
+        12
+      ],
+      "rain_min_mm": 15,
+      "rain_opt_mm": 30,
+      "lag_days": [
+        5,
+        8
+      ],
+      "soil_temp_c": {
+        "min": 8,
+        "opt_lo": 12,
+        "opt_hi": 20,
+        "max": 24
+      },
+      "frost_kill_c": -2,
+      "frost_recovery_days": 10,
+      "dry_day_penalty": 0.08,
+      "dry_window_days": 5
+    },
+    "terrain": {
+      "edge_bonus": 0.0,
+      "interior_factor": 1.0
+    },
+    "struct_bonus": {},
+    "lookalikes": [],
+    "explain": {},
+    "source": "atlas",
+    "stand_age": {
+      "min": 10,
+      "opt_lo": 15,
+      "opt_hi": 60,
+      "max": 100
+    }
+  },
+  {
+    "id": "cantharellus_cibarius",
+    "name_pl": "Pieprznik jadalny (kurka)",
+    "name_lat": "Cantharellus cibarius",
+    "edible": true,
+    "ecology": "mycorrhizal",
+    "hosts": {
+      "SO": 1.0,
+      "ŚW": 0.9,
+      "BK": 0.9,
+      "DB": 0.8,
+      "GB": 0.4,
+      "BRZ": 0.4
+    },
+    "tsl": {
+      "Bśw": 1.0,
+      "BMśw": 1.0,
+      "LMśw": 0.8,
+      "Bw": 0.6,
+      "BMw": 0.6,
+      "Lśw": 0.4,
+      "Bs": 0.4
+    },
+    "moisture_pref": [
+      "fresh",
+      "moist"
+    ],
+    "arable_formerly_penalty": 0.3,
+    "season": {
+      "start_doy": 165,
+      "peak_lo_doy": 190,
+      "peak_hi_doy": 260,
+      "end_doy": 300
+    },
+    "weather": {
+      "rain_window_days": [
+        10,
+        28
+      ],
+      "rain_min_mm": 30,
+      "rain_opt_mm": 60,
+      "lag_days": [
+        10,
+        20
+      ],
+      "soil_temp_c": {
+        "min": 10,
+        "opt_lo": 13,
+        "opt_hi": 20,
+        "max": 25
+      },
+      "frost_kill_c": -2,
+      "frost_recovery_days": 10,
+      "dry_day_penalty": 0.03,
+      "dry_window_days": 10
+    },
+    "terrain": {
+      "edge_bonus": 0.0,
+      "interior_factor": 1.0
+    },
+    "struct_bonus": {},
+    "lookalikes": [
+      {
+        "name": "Lisówka pomarańczowa (Hygrophoropsis aurantiaca)",
+        "text": "Niesmaczna, prawdziwe cienkie blaszki zamiast listewek, miąższ miękki."
+      }
+    ],
+    "explain": {},
+    "source": "atlas",
+    "stand_age": {
+      "min": 20,
+      "opt_lo": 30,
+      "opt_hi": 90,
+      "max": 150
+    }
+  },
+  {
+    "id": "lactarius_deliciosus",
+    "name_pl": "Mleczaj rydz",
+    "name_lat": "Lactarius deliciosus",
+    "edible": true,
+    "ecology": "mycorrhizal",
+    "hosts": {
+      "SO": 1.0
+    },
+    "tsl": {
+      "Bśw": 1.0,
+      "BMśw": 0.9,
+      "Bs": 0.8,
+      "Bw": 0.5
+    },
+    "moisture_pref": [
+      "dry",
+      "fresh"
+    ],
+    "arable_formerly_penalty": 0.1,
+    "season": {
+      "start_doy": 215,
+      "peak_lo_doy": 250,
+      "peak_hi_doy": 295,
+      "end_doy": 320
+    },
+    "weather": {
+      "rain_window_days": [
+        6,
+        18
+      ],
+      "rain_min_mm": 20,
+      "rain_opt_mm": 40,
+      "lag_days": [
+        7,
+        12
+      ],
+      "soil_temp_c": {
+        "min": 7,
+        "opt_lo": 10,
+        "opt_hi": 17,
+        "max": 22
+      },
+      "frost_kill_c": -2,
+      "frost_recovery_days": 10,
+      "dry_day_penalty": 0.08,
+      "dry_window_days": 5
+    },
+    "terrain": {
+      "edge_bonus": 0.15,
+      "interior_factor": 1.0
+    },
+    "struct_bonus": {},
+    "lookalikes": [
+      {
+        "name": "Mleczaj wełnianka (Lactarius torminosus)",
+        "text": "Trujący. Kosmaty brzeg kapelusza i białe, ostre mleczko; rośnie pod brzozami."
+      }
+    ],
+    "explain": {},
+    "source": "atlas",
+    "stand_age": {
+      "min": 5,
+      "opt_lo": 10,
+      "opt_hi": 50,
+      "max": 90
+    }
+  },
+  {
+    "id": "armillaria",
+    "name_pl": "Opieńka miodowa",
+    "name_lat": "Armillaria s.l.",
+    "edible": true,
+    "ecology": "saprotroph",
+    "hosts": {},
+    "tsl": {
+      "LMśw": 1.0,
+      "Lśw": 1.0,
+      "LMw": 1.0,
+      "Lw": 1.0,
+      "BMśw": 0.9,
+      "BMw": 0.9,
+      "Lł": 0.8,
+      "Bśw": 0.7,
+      "Bw": 0.7,
+      "OlJ": 0.7,
+      "LMb": 0.6,
+      "Ol": 0.5,
+      "BMb": 0.5,
+      "Bb": 0.3,
+      "Bs": 0.0
+    },
+    "moisture_pref": [],
+    "arable_formerly_penalty": 0.0,
+    "season": {
+      "start_doy": 245,
+      "peak_lo_doy": 275,
+      "peak_hi_doy": 310,
+      "end_doy": 335
+    },
+    "weather": {
+      "rain_window_days": [
+        6,
+        20
+      ],
+      "rain_min_mm": 20,
+      "rain_opt_mm": 40,
+      "lag_days": [
+        7,
+        14
+      ],
+      "soil_temp_c": {
+        "min": 5,
+        "opt_lo": 8,
+        "opt_hi": 14,
+        "max": 18
+      },
+      "frost_kill_c": -4,
+      "frost_recovery_days": 10,
+      "dry_day_penalty": 0.08,
+      "cold_nights": {
+        "max_tmin_c": 10,
+        "min_count": 3,
+        "window_days": 10,
+        "else_factor": 0.3
+      },
+      "dry_window_days": 5
+    },
+    "terrain": {
+      "edge_bonus": 0.0,
+      "interior_factor": 1.0
+    },
+    "struct_bonus": {
+      "KO": 1.15,
+      "KDO": 1.15,
+      "BP": 1.1
+    },
+    "lookalikes": [
+      {
+        "name": "Hełmówka jadowita (Galerina marginata)",
+        "text": "Śmiertelnie trująca, rośnie na tym samym drewnie. Opieńka ma biały wysyp zarodników i łuseczki na kapeluszu."
+      }
+    ],
+    "explain": {},
+    "source": "atlas"
+  },
+  {
+    "id": "macrolepiota_procera",
+    "name_pl": "Czubajka kania",
+    "name_lat": "Macrolepiota procera",
+    "edible": true,
+    "ecology": "saprotroph",
+    "hosts": {},
+    "tsl": {
+      "Lśw": 1.0,
+      "LMśw": 1.0,
+      "BMśw": 0.8,
+      "LMw": 0.7,
+      "Bśw": 0.6,
+      "Lw": 0.6,
+      "Bs": 0.3
+    },
+    "moisture_pref": [
+      "dry",
+      "fresh",
+      "moist"
+    ],
+    "arable_formerly_penalty": 0.0,
+    "season": {
+      "start_doy": 190,
+      "peak_lo_doy": 220,
+      "peak_hi_doy": 265,
+      "end_doy": 300
+    },
+    "weather": {
+      "rain_window_days": [
+        6,
+        18
+      ],
+      "rain_min_mm": 20,
+      "rain_opt_mm": 40,
+      "lag_days": [
+        7,
+        12
+      ],
+      "soil_temp_c": {
+        "min": 10,
+        "opt_lo": 14,
+        "opt_hi": 22,
+        "max": 26
+      },
+      "frost_kill_c": -2,
+      "frost_recovery_days": 10,
+      "dry_day_penalty": 0.08,
+      "dry_window_days": 5
+    },
+    "terrain": {
+      "edge_bonus": 0.2,
+      "interior_factor": 0.7
+    },
+    "struct_bonus": {},
+    "lookalikes": [
+      {
+        "name": "Muchomor sromotnikowy (Amanita phalloides)",
+        "text": "Śmiertelnie trujący. Białe blaszki, pierścień i pochwa u nasady trzonu – zawsze wykop cały owocnik."
+      },
+      {
+        "name": "Czubajnik czerwieniejący (Chlorophyllum rachodes)",
+        "text": "Może powodować zatrucia. Miąższ czerwienieje po przekrojeniu, trzon bez wężykowatego wzoru."
+      }
+    ],
+    "explain": {},
+    "source": "atlas"
+  },
+  {
+    "id": "cortinarius_caperatus",
+    "name_pl": "Płachetka kołpakowata",
+    "name_lat": "Cortinarius caperatus",
+    "edible": true,
+    "ecology": "mycorrhizal",
+    "hosts": {
+      "SO": 1.0,
+      "ŚW": 1.0,
+      "BRZ": 0.4,
+      "BK": 0.4
+    },
+    "tsl": {
+      "BMśw": 1.0,
+      "Bw": 1.0,
+      "Bśw": 0.9,
+      "BMw": 0.9,
+      "BMb": 0.7,
+      "Bb": 0.5
+    },
+    "moisture_pref": [
+      "fresh",
+      "moist",
+      "wet"
+    ],
+    "arable_formerly_penalty": 0.3,
+    "season": {
+      "start_doy": 215,
+      "peak_lo_doy": 245,
+      "peak_hi_doy": 280,
+      "end_doy": 305
+    },
+    "weather": {
+      "rain_window_days": [
+        6,
+        18
+      ],
+      "rain_min_mm": 20,
+      "rain_opt_mm": 40,
+      "lag_days": [
+        7,
+        12
+      ],
+      "soil_temp_c": {
+        "min": 8,
+        "opt_lo": 11,
+        "opt_hi": 17,
+        "max": 22
+      },
+      "frost_kill_c": -2,
+      "frost_recovery_days": 10,
+      "dry_day_penalty": 0.08,
+      "dry_window_days": 5
+    },
+    "terrain": {
+      "edge_bonus": 0.0,
+      "interior_factor": 1.0
+    },
+    "struct_bonus": {},
+    "lookalikes": [
+      {
+        "name": "Zasłonaki (Cortinarius spp.)",
+        "text": "Niektóre są śmiertelnie trujące (np. zasłonak rudy). Płachetka ma pierścień, nie zasnówkę."
+      },
+      {
+        "name": "Muchomor sromotnikowy (Amanita phalloides)",
+        "text": "Śmiertelnie trujący. Białe blaszki, pierścień i pochwa u nasady trzonu – zawsze wykop cały owocnik."
+      }
+    ],
+    "explain": {},
+    "source": "atlas",
+    "stand_age": {
+      "min": 25,
+      "opt_lo": 40,
+      "opt_hi": 120,
+      "max": 180
+    }
+  },
+  {
+    "id": "xerocomellus_subtomentosus",
+    "name_pl": "Podgrzybek zajączek",
+    "name_lat": "Xerocomus subtomentosus",
+    "edible": true,
+    "ecology": "mycorrhizal",
+    "hosts": {
+      "DB": 1.0,
+      "BK": 1.0,
+      "SO": 0.8,
+      "ŚW": 0.8,
+      "BRZ": 0.6,
+      "GB": 0.5
+    },
+    "tsl": {
+      "BMśw": 1.0,
+      "LMśw": 1.0,
+      "Lśw": 0.9,
+      "LMw": 0.7,
+      "BMw": 0.7,
+      "Bśw": 0.6
+    },
+    "moisture_pref": [
+      "fresh",
+      "moist"
+    ],
+    "arable_formerly_penalty": 0.2,
+    "season": {
+      "start_doy": 185,
+      "peak_lo_doy": 215,
+      "peak_hi_doy": 265,
+      "end_doy": 300
+    },
+    "weather": {
+      "rain_window_days": [
+        6,
+        18
+      ],
+      "rain_min_mm": 20,
+      "rain_opt_mm": 40,
+      "lag_days": [
+        7,
+        12
+      ],
+      "soil_temp_c": {
+        "min": 9,
+        "opt_lo": 12,
+        "opt_hi": 20,
+        "max": 24
+      },
+      "frost_kill_c": -2,
+      "frost_recovery_days": 10,
+      "dry_day_penalty": 0.08,
+      "dry_window_days": 5
+    },
+    "terrain": {
+      "edge_bonus": 0.0,
+      "interior_factor": 1.0
+    },
+    "struct_bonus": {},
+    "lookalikes": [
+      {
+        "name": "Goryczak żółciowy (Tylopilus felleus)",
+        "text": "Niejadalny, bardzo gorzki. Różowiejące rurki i ciemna siateczka na trzonie."
+      }
+    ],
+    "explain": {},
+    "source": "atlas",
+    "stand_age": {
+      "min": 15,
+      "opt_lo": 30,
+      "opt_hi": 120,
+      "max": 200
+    }
+  },
+  {
+    "id": "russula_edible",
+    "name_pl": "Gołąbki jadalne (grupa)",
+    "name_lat": "Russula spp.",
+    "edible": true,
+    "ecology": "mycorrhizal",
+    "hosts": {
+      "BK": 1.0,
+      "DB": 1.0,
+      "SO": 0.8,
+      "ŚW": 0.8,
+      "BRZ": 0.7,
+      "GB": 0.7
+    },
+    "tsl": {
+      "LMśw": 1.0,
+      "Lśw": 1.0,
+      "BMśw": 1.0,
+      "LMw": 0.8,
+      "BMw": 0.8,
+      "Bśw": 0.7,
+      "Lw": 0.6,
+      "Bw": 0.6
+    },
+    "moisture_pref": [
+      "fresh",
+      "moist"
+    ],
+    "arable_formerly_penalty": 0.2,
+    "season": {
+      "start_doy": 185,
+      "peak_lo_doy": 215,
+      "peak_hi_doy": 265,
+      "end_doy": 300
+    },
+    "weather": {
+      "rain_window_days": [
+        4,
+        14
+      ],
+      "rain_min_mm": 20,
+      "rain_opt_mm": 40,
+      "lag_days": [
+        5,
+        10
+      ],
+      "soil_temp_c": {
+        "min": 10,
+        "opt_lo": 13,
+        "opt_hi": 21,
+        "max": 25
+      },
+      "frost_kill_c": -2,
+      "frost_recovery_days": 10,
+      "dry_day_penalty": 0.08,
+      "dry_window_days": 5
+    },
+    "terrain": {
+      "edge_bonus": 0.0,
+      "interior_factor": 1.0
+    },
+    "struct_bonus": {},
+    "lookalikes": [
+      {
+        "name": "Muchomor zielonawy (Amanita phalloides)",
+        "text": "Śmiertelnie trujący. Bywa mylony z zielonawymi gołąbkami – sprawdź pochwę u nasady trzonu."
+      }
+    ],
+    "explain": {},
+    "source": "atlas",
+    "stand_age": {
+      "min": 15,
+      "opt_lo": 30,
+      "opt_hi": 120,
+      "max": 200
+    },
+    "notice": "Oceniane jako grupa. Rozpoznanie gatunku w obrębie gołąbków jest trudne – zbieraj tylko te, które znasz na pewno."
+  },
+  {
+    "id": "morchella",
+    "name_pl": "Smardz",
+    "name_lat": "Morchella spp.",
+    "edible": true,
+    "ecology": "saprotroph",
+    "hosts": {},
+    "tsl": {
+      "Lł": 1.0,
+      "Lw": 0.9,
+      "OlJ": 0.9,
+      "Lśw": 0.6,
+      "LMw": 0.5
+    },
+    "moisture_pref": [
+      "moist",
+      "wet",
+      "riparian"
+    ],
+    "arable_formerly_penalty": 0.0,
+    "season": {
+      "start_doy": 90,
+      "peak_lo_doy": 105,
+      "peak_hi_doy": 140,
+      "end_doy": 160
+    },
+    "weather": {
+      "rain_window_days": [
+        3,
+        14
+      ],
+      "rain_min_mm": 15,
+      "rain_opt_mm": 30,
+      "lag_days": [
+        5,
+        10
+      ],
+      "soil_temp_c": {
+        "min": 6,
+        "opt_lo": 8,
+        "opt_hi": 14,
+        "max": 18
+      },
+      "frost_kill_c": -3,
+      "frost_recovery_days": 7,
+      "dry_day_penalty": 0.08,
+      "dry_window_days": 5
+    },
+    "terrain": {
+      "edge_bonus": 0.0,
+      "interior_factor": 1.0
+    },
+    "struct_bonus": {},
+    "lookalikes": [
+      {
+        "name": "Piestrzenica kasztanowata (Gyromitra esculenta)",
+        "text": "Śmiertelnie trująca. Kapelusz mózgowato pofałdowany zamiast komór o regularnych żeberkach."
+      }
+    ],
+    "explain": {},
+    "source": "atlas",
+    "notice": "Smardze są pod częściową ochroną. W lesie ich nie zbieraj – dozwolone tylko na terenach ogrodów i parków."
+  },
+  {
+    "id": "boletus_reticulatus",
+    "name_pl": "Borowik usiatkowany",
+    "name_lat": "Boletus reticulatus",
+    "edible": true,
+    "ecology": "mycorrhizal",
+    "hosts": {
+      "DB": 1.0,
+      "BK": 1.0,
+      "GB": 0.5,
+      "LP": 0.4
+    },
+    "tsl": {
+      "Lśw": 1.0,
+      "LMśw": 1.0,
+      "BMśw": 0.6,
+      "Lw": 0.5,
+      "LMw": 0.5
+    },
+    "moisture_pref": [
+      "fresh"
+    ],
+    "arable_formerly_penalty": 0.3,
+    "season": {
+      "start_doy": 135,
+      "peak_lo_doy": 165,
+      "peak_hi_doy": 210,
+      "end_doy": 265
+    },
+    "weather": {
+      "rain_window_days": [
+        7,
+        18
+      ],
+      "rain_min_mm": 25,
+      "rain_opt_mm": 45,
+      "lag_days": [
+        7,
+        12
+      ],
+      "soil_temp_c": {
+        "min": 12,
+        "opt_lo": 15,
+        "opt_hi": 22,
+        "max": 26
+      },
+      "frost_kill_c": -2,
+      "frost_recovery_days": 10,
+      "dry_day_penalty": 0.08,
+      "dry_window_days": 5
+    },
+    "terrain": {
+      "edge_bonus": 0.1,
+      "interior_factor": 1.0
+    },
+    "struct_bonus": {},
+    "lookalikes": [
+      {
+        "name": "Goryczak żółciowy (Tylopilus felleus)",
+        "text": "Niejadalny, bardzo gorzki. Różowiejące rurki i ciemna siateczka na trzonie."
+      },
+      {
+        "name": "Borowik szatański (Rubroboletus satanas)",
+        "text": "Trujący. Czerwone pory i czerwony trzon, rośnie w ciepłych lasach liściastych na wapieniach."
+      }
+    ],
+    "explain": {},
+    "source": "atlas",
+    "stand_age": {
+      "min": 40,
+      "opt_lo": 60,
+      "opt_hi": 160,
+      "max": 250
+    }
+  }
+]

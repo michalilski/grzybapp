@@ -1,0 +1,6 @@
+{
+  "name": "Celestynów – fixture 5 × 5 km",
+  "bbox": { "minLon": 21.33, "minLat": 52.02, "maxLon": 21.40, "maxLat": 52.065 },
+  "weather": "open_meteo_2026-10-14.json",
+  "weather_today": "2026-10-14"
+}
