@@ -98,4 +98,21 @@ final class AggregationTests: XCTestCase {
         XCTAssertEqual(Double(general), expected, accuracy: 0.01)
         XCTAssertEqual(session.layer(on: day, speciesIds: ids, aggregation: session.generalAggregation).values[1], -1)
     }
+
+    func testHabitatLayerIgnoresDrought() {
+        let day = DayStamp(iso: "2026-10-09")!
+        let dry = WeatherSeries((0..<40).map {
+            WeatherDay(day: day.adding(-$0), precipMm: 0, tminC: 8, tmaxC: 16, soilTempC: 13, soilMoisture: nil, humidity: nil, isForecast: false)
+        })
+        let session = ScoringSession(
+            knowledge: TestSupport.knowledge, species: TestSupport.knowledge.atlasSpecies,
+            geometry: GridGeometry(bbox: BoundingBox(minLon: 21.35, minLat: 52.03, maxLon: 21.37, maxLat: 52.05), cellSizeM: 100),
+            cells: [TestSupport.cell(index: 0)], weather: dry, observations: [], year: 2026
+        )
+        let ids = TestSupport.knowledge.atlasSpecies.map(\.id)
+        XCTAssertLessThan(session.layer(on: day, speciesIds: ids).values[0], 1)
+        let habitat = session.habitatLayer(speciesIds: ids, aggregation: session.generalAggregation).values[0]
+        XCTAssertGreaterThan(habitat, 90)
+        XCTAssertEqual(Double(habitat), session.habitatScore(at: 0, speciesIds: ids, aggregation: session.generalAggregation), accuracy: 0.01)
+    }
 }

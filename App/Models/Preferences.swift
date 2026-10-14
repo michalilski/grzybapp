@@ -31,6 +31,10 @@ final class Preferences {
         dayOffset = Int(store.string("day_offset") ?? "0") ?? 0
         disabledSpecies = Set((store.string("disabled_species") ?? "").split(separator: ",").map(String.init))
         lastFlushNotice = store.string("last_flush_notice")
+        if store.string("general_default_v1") == nil {
+            speciesFilter = Self.general
+            store.set("general_default_v1", "1")
+        }
     }
 
     var camera: (center: Coordinate, zoom: Double)? {

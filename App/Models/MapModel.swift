@@ -78,11 +78,12 @@ final class MapModel {
         Task {
             let general = isGeneral
             let result = await Task.detached(priority: .userInitiated) { () -> (ScoreOverlay?, Float) in
-                let layer = session.layer(on: day, speciesIds: ids, aggregation: general ? session.generalAggregation : .best)
-                let overlay = general
-                    ? ScoreRenderer.renderHeatmap(layer, fieldMode: fieldMode)
-                    : ScoreRenderer.render(layer, bands: bands, fieldMode: fieldMode)
-                return (overlay, layer.values.max() ?? 0)
+                let today = session.layer(on: day, speciesIds: ids)
+                guard general else {
+                    return (ScoreRenderer.render(today, bands: bands, fieldMode: fieldMode), today.values.max() ?? 0)
+                }
+                let habitat = session.habitatLayer(speciesIds: ids, aggregation: session.generalAggregation)
+                return (ScoreRenderer.renderHeatmap(habitat, fieldMode: fieldMode), today.values.max() ?? 0)
             }.value
             overlay = result.0
             maxScore = result.1

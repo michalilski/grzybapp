@@ -27,7 +27,7 @@ struct CellDetailsSheet: View {
             header(ranking.first, cell: cell, ranking: ranking)
             actions(cell: cell, ranking: ranking)
             VStack(alignment: .leading, spacing: 0) {
-                SectionHeader(title: "Ranking gatunków", trailing: app.map.selectedDay.shortPolish)
+                SectionHeader(title: app.map.isGeneral ? "Warunki dziś" : "Ranking gatunków", trailing: app.map.selectedDay.shortPolish)
                 ForEach(ranking.filter { $0.score >= 1 || $0.id == expanded }) { score in
                     SpeciesScoreRow(score: score, isExpanded: expanded == score.id) {
                         withAnimation(.snappy) { expanded = expanded == score.id ? nil : score.id }
@@ -53,23 +53,35 @@ struct CellDetailsSheet: View {
     private func header(_ best: SpeciesScore?, cell: CellFeatures, ranking: [SpeciesScore]) -> some View {
         HStack(alignment: .top) {
             VStack(alignment: .leading, spacing: Theme.Spacing.xs) {
-                Text(app.map.isGeneral ? "OGÓLNY POTENCJAŁ · NAJLEPIEJ" : "WARTO SPRAWDZIĆ")
+                Text(app.map.isGeneral ? "POTENCJAŁ MIEJSCA · NAJLEPIEJ" : "WARTO SPRAWDZIĆ")
                     .font(Theme.Typeface.captionSM)
                     .foregroundStyle(Theme.Palette.mute)
-                DisplayTitle(text: best?.species.namePl ?? "Brak potencjału", size: 40)
+                DisplayTitle(text: (app.map.isGeneral ? habitatLeader : best?.species.namePl) ?? "Brak potencjału", size: 40)
                 Text(app.services.knowledge.codes.siteName(cell.effective.siteType) + " · " + app.services.knowledge.codes.treeName(cell.dominantSpecies))
                     .font(Theme.Typeface.captionMD)
                     .foregroundStyle(Theme.Palette.mute)
             }
             Spacer()
             if app.map.isGeneral {
-                let edible = Set(app.map.speciesIds(enabled: app.species.enabled))
-                let general = app.map.session?.generalAggregation.combine(ranking.filter { edible.contains($0.id) }.map(\.score)) ?? 0
+                let general = habitatScore
                 ScoreBadge(score: general, band: PotentialBand(score: general, bands: app.services.knowledge.parameters.bands), size: 64)
             } else if let best {
                 ScoreBadge(score: best.score, band: best.band, size: 64)
             }
         }
+    }
+
+    private var habitatScore: Double {
+        guard let session = app.map.session else { return 0 }
+        return session.habitatScore(at: cellIndex, speciesIds: app.map.speciesIds(enabled: app.species.enabled), aggregation: session.generalAggregation)
+    }
+
+    private var habitatLeader: String? {
+        guard let session = app.map.session else { return nil }
+        let ids = app.map.speciesIds(enabled: app.species.enabled)
+        let scored = ids.map { ($0, session.habitatScore(at: cellIndex, speciesIds: [$0], aggregation: .best)) }
+        guard let top = scored.max(by: { $0.1 < $1.1 }), top.1 > 0 else { return nil }
+        return session.profile(top.0)?.namePl
     }
 
     private func actions(cell: CellFeatures, ranking: [SpeciesScore]) -> some View {
