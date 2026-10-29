@@ -57,6 +57,7 @@
 		7C95D3CD1E56ADC4449D6054 /* RegionDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionDownloader.swift; sourceTree = "<group>"; };
 		7E6D3396B2BACCEF20A2DB83 /* SpeciesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesListView.swift; sourceTree = "<group>"; };
 		83DA4A9E2A6B81007184694D /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		85F6DB1565C11EB3D3BBA62F /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
 		92A35EEF81E909F8B279463F /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		9D7BD3B6787B8C01AFD21809 /* GrzybyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrzybyApp.swift; sourceTree = "<group>"; };
 		A716994DA94A64FE41B7BD8F /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
@@ -102,6 +103,14 @@
 				7C448A2A165C2CEEE23D7246 /* AddObservationView.swift */,
 			);
 			path = Observation;
+			sourceTree = "<group>";
+		};
+		230C611D61F5E156C4B15745 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				85F6DB1565C11EB3D3BBA62F /* Base.xcconfig */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		27178ECAC5F936CF9431600D /* Resources */ = {
@@ -255,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				4765A723AE161A1433FC9746 /* App */,
+				230C611D61F5E156C4B15745 /* Config */,
 				7C7C24AD233E586BA2F72587 /* Packages */,
 				D275DCC48E5419C5AF44F2F4 /* Products */,
 			);
@@ -296,7 +306,7 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					CBC1B12BB547C945B73D9470 = {
-						DevelopmentTeam = N5H5R9A2K2;
+						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -430,12 +440,12 @@
 		};
 		349959832834A82B1F872A83 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85F6DB1565C11EB3D3BBA62F /* Base.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N5H5R9A2K2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -443,7 +453,6 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.michalilski.grzybapp;
 				PRODUCT_NAME = Grzyby;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
@@ -455,12 +464,12 @@
 		};
 		53B1406E5E56B7E650910A99 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85F6DB1565C11EB3D3BBA62F /* Base.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N5H5R9A2K2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,7 +477,6 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.michalilski.grzybapp;
 				PRODUCT_NAME = Grzyby;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;

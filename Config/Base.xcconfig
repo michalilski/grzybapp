@@ -1,0 +1,4 @@
+PRODUCT_BUNDLE_IDENTIFIER = com.michalilski.grzybapp
+DEVELOPMENT_TEAM =
+
+#include? "Local.xcconfig"

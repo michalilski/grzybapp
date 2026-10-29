@@ -6,3 +6,8 @@ xcuserdata/
 *.xcuserstate
 .DS_Store
 .swiftpm/
+Grzyby.xcodeproj/
+Config/Local.xcconfig
+*.xcresult
+.env
+.env.*

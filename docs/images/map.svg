@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844" font-family="-apple-system, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <clipPath id="screen"><rect width="390" height="844" rx="48"/></clipPath>
+    <radialGradient id="h1"><stop offset="0" stop-color="#8C001E" stop-opacity=".9"/><stop offset=".35" stop-color="#E62800" stop-opacity=".8"/><stop offset=".7" stop-color="#FF8C00" stop-opacity=".6"/><stop offset="1" stop-color="#FFD600" stop-opacity="0"/></radialGradient>
+    <radialGradient id="h2"><stop offset="0" stop-color="#FF8C00" stop-opacity=".75"/><stop offset=".6" stop-color="#FFD600" stop-opacity=".45"/><stop offset="1" stop-color="#FFD600" stop-opacity="0"/></radialGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="6" flood-opacity=".12"/></filter>
+  </defs>
+  <g clip-path="url(#screen)">
+    <rect width="390" height="844" fill="#EEF0E6"/>
+    <path d="M0 120 C80 100 140 160 220 140 S360 90 390 110 V560 C320 600 240 540 160 590 S40 620 0 600Z" fill="#CFE3C0"/>
+    <path d="M30 300 C90 260 170 330 240 290 S350 260 390 300 V470 C300 500 220 450 140 500 S50 500 30 470Z" fill="#B9D7A6"/>
+    <path d="M0 660 L390 600" stroke="#fff" stroke-width="6"/>
+    <path d="M250 0 C240 200 280 400 230 844" stroke="#fff" stroke-width="4" fill="none"/>
+    <path d="M60 844 C90 700 40 600 120 520" stroke="#F7E7A6" stroke-width="5" fill="none"/>
+    <ellipse cx="120" cy="300" rx="130" ry="110" fill="url(#h2)"/>
+    <ellipse cx="300" cy="380" rx="120" ry="100" fill="url(#h2)"/>
+    <ellipse cx="150" cy="390" rx="90" ry="75" fill="url(#h1)"/>
+    <ellipse cx="310" cy="250" rx="60" ry="55" fill="url(#h1)"/>
+    <circle cx="208" cy="470" r="9" fill="#1151FF" stroke="#fff" stroke-width="3"/>
+    <circle cx="90" cy="230" r="7" fill="#111" stroke="#fff" stroke-width="2"/>
+    <text x="24" y="32" font-size="16" font-weight="600" fill="#111">9:41</text>
+
+    <g filter="url(#sh)">
+      <rect x="18" y="56" width="214" height="44" rx="22" fill="#fff"/>
+      <circle cx="350" cy="78" r="22" fill="#fff" stroke="#E5E5E5"/>
+    </g>
+    <text x="34" y="87" font-family="'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif" font-size="24" fill="#111" textLength="168" lengthAdjust="spacingAndGlyphs">CELESTYNÓW · LAS</text>
+    <path d="M213 74 l5 5 l5 -5" stroke="#111" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <g stroke="#111" stroke-width="2" fill="none"><circle cx="350" cy="78" r="5"/><path d="M350 66v4M350 86v4M338 78h4M358 78h4M342 70l3 3M355 83l3 3M342 86l3-3M355 73l3-3"/></g>
+
+    <g font-size="14" font-weight="500">
+      <rect x="18" y="112" width="86" height="40" rx="20" fill="#111"/><text x="61" y="137" text-anchor="middle" fill="#fff">Ogólnie</text>
+      <rect x="112" y="112" width="150" height="40" rx="20" fill="#fff" stroke="#CACACB"/><text x="187" y="137" text-anchor="middle" fill="#111">Wszystkie jadalne</text>
+      <rect x="270" y="112" width="160" height="40" rx="20" fill="#fff" stroke="#CACACB"/><text x="350" y="137" text-anchor="middle" fill="#111">Borowik szlachetny</text>
+    </g>
+    <rect x="18" y="162" width="290" height="40" rx="20" fill="#111"/>
+    <text x="40" y="187" font-size="14" font-weight="500" fill="#fff">✦  Wysyp za 2–4 dni: podgrzybek brunatny</text>
+
+    <g filter="url(#sh)">
+      <circle cx="302" cy="580" r="22" fill="#fff" stroke="#E5E5E5"/>
+      <circle cx="350" cy="580" r="22" fill="#111"/>
+    </g>
+    <path d="M294 586 l16 -14 l-6 18 l-2 -6z" fill="#111"/>
+    <path d="M350 571v18M341 580h18" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+
+    <g filter="url(#sh)"><rect x="18" y="614" width="354" height="128" rx="24" fill="#fff"/></g>
+    <text x="36" y="652" font-family="'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif" font-size="28" fill="#111">DZIŚ · 29 PAŹ</text>
+    <text x="234" y="648" font-size="12" font-weight="500" fill="#707072">mało</text>
+    <defs><linearGradient id="ramp"><stop offset="0" stop-color="#FFD600" stop-opacity=".5"/><stop offset=".35" stop-color="#FF8C00"/><stop offset=".7" stop-color="#E62800"/><stop offset="1" stop-color="#6E0028"/></linearGradient></defs>
+    <rect x="264" y="639" width="56" height="10" rx="5" fill="url(#ramp)"/>
+    <text x="325" y="648" font-size="12" font-weight="500" fill="#707072">dużo</text>
+    <g font-size="12" font-weight="500" text-anchor="middle">
+      <rect x="36" y="668" width="36" height="52" rx="18" fill="#111"/><text x="54" y="688" fill="#fff">CZ</text><text x="54" y="708" font-family="'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif" font-size="18" fill="#fff">DZIŚ</text>
+      <rect x="77" y="668" width="36" height="52" rx="18" fill="#F5F5F5"/><text x="95" y="688" fill="#111">PT</text><text x="95" y="708" font-family="'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif" font-size="18" fill="#111">+1</text>
+      <rect x="118" y="668" width="36" height="52" rx="18" fill="#F5F5F5"/><text x="136" y="688" fill="#111">SB</text><text x="136" y="708" font-family="'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif" font-size="18" fill="#111">+2</text>
+      <rect x="159" y="668" width="36" height="52" rx="18" fill="#F5F5F5"/><text x="177" y="688" fill="#111">ND</text><text x="177" y="708" font-family="'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif" font-size="18" fill="#111">+3</text>
+      <rect x="200" y="668" width="36" height="52" rx="18" fill="#F5F5F5"/><text x="218" y="688" fill="#111">PN</text><text x="218" y="708" font-family="'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif" font-size="18" fill="#111">+4</text>
+      <rect x="241" y="668" width="36" height="52" rx="18" fill="#F5F5F5"/><text x="259" y="688" fill="#111">WT</text><text x="259" y="708" font-family="'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif" font-size="18" fill="#111">+5</text>
+      <rect x="282" y="668" width="36" height="52" rx="18" fill="#F5F5F5"/><text x="300" y="688" fill="#111">ŚR</text><text x="300" y="708" font-family="'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif" font-size="18" fill="#111">+6</text>
+      <rect x="323" y="668" width="36" height="52" rx="18" fill="#F5F5F5"/><text x="341" y="688" fill="#111">CZ</text><text x="341" y="708" font-family="'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif" font-size="18" fill="#111">+7</text>
+    </g>
+
+    <rect x="0" y="760" width="390" height="84" fill="#F9F9F9"/>
+    <path d="M0 760h390" stroke="#E5E5E5"/>
+    <g font-size="10" font-weight="500" text-anchor="middle">
+      <text x="49" y="804" fill="#111">Mapa</text><text x="146" y="804" fill="#9E9EA0">Dziennik</text><text x="244" y="804" fill="#9E9EA0">Regiony</text><text x="341" y="804" fill="#9E9EA0">Gatunki</text>
+    </g>
+    <path d="M38 776l7-3 8 3 7-3v14l-7 3-8-3-7 3z" fill="#111"/>
+    <rect x="137" y="773" width="18" height="18" rx="2" fill="none" stroke="#9E9EA0" stroke-width="2"/>
+    <rect x="235" y="773" width="18" height="18" fill="none" stroke="#9E9EA0" stroke-width="2" stroke-dasharray="3 3"/>
+    <path d="M333 790c0-10 6-16 16-17-1 10-6 16-16 17zM333 790l8-8" stroke="#9E9EA0" stroke-width="2" fill="none"/>
+    <rect x="128" y="830" width="134" height="5" rx="2.5" fill="#111"/>
+  </g>
+  <rect x="1" y="1" width="388" height="842" rx="47" fill="none" stroke="#111" stroke-width="2"/>
+</svg>

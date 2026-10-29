@@ -26,11 +26,12 @@ targets:
         product: GrzybStore
       - package: MapLibre
         product: MapLibre
+    configFiles:
+      Debug: Config/Base.xcconfig
+      Release: Config/Base.xcconfig
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.michalilski.grzybapp
         PRODUCT_NAME: Grzyby
-        DEVELOPMENT_TEAM: N5H5R9A2K2
         CODE_SIGN_STYLE: Automatic
         TARGETED_DEVICE_FAMILY: "1"
         SWIFT_VERSION: "5.0"

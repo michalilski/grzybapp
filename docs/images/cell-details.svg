@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844" font-family="-apple-system, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <clipPath id="screen"><rect width="390" height="844" rx="48"/></clipPath>
+    <radialGradient id="h1"><stop offset="0" stop-color="#8C001E" stop-opacity=".9"/><stop offset=".4" stop-color="#E62800" stop-opacity=".75"/><stop offset="1" stop-color="#FFD600" stop-opacity="0"/></radialGradient>
+  </defs>
+  <g clip-path="url(#screen)">
+    <rect width="390" height="844" fill="#CFE3C0"/>
+    <ellipse cx="180" cy="150" rx="150" ry="110" fill="url(#h1)"/>
+    <rect x="170" y="140" width="16" height="16" fill="none" stroke="#111" stroke-width="2.5"/>
+    <rect x="0" y="0" width="390" height="844" fill="#000" opacity=".12"/>
+    <rect x="0" y="230" width="390" height="640" rx="24" fill="#fff"/>
+    <rect x="175" y="238" width="40" height="5" rx="2.5" fill="#CACACB"/>
+
+    <text x="24" y="276" font-size="12" font-weight="500" fill="#707072">WARTO SPRAWDZIĆ</text>
+    <text x="24" y="314" font-family="'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif" font-size="40" fill="#111" textLength="236" lengthAdjust="spacingAndGlyphs">BOROWIK SZLACHETNY</text>
+    <text x="24" y="336" font-size="14" font-weight="500" fill="#707072">Bór mieszany świeży · Sosna</text>
+    <text x="366" y="306" text-anchor="end" font-family="'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif" font-size="64" fill="#111" textLength="52" lengthAdjust="spacingAndGlyphs">78</text>
+    <circle cx="262" cy="328" r="4" fill="#D30005"/>
+    <text x="366" y="332" text-anchor="end" font-size="12" font-weight="500" fill="#707072">BARDZO DOBRY</text>
+
+    <rect x="24" y="356" width="167" height="48" rx="24" fill="#111"/><text x="107" y="386" text-anchor="middle" font-size="16" font-weight="500" fill="#fff">Znalazłem</text>
+    <rect x="199" y="356" width="167" height="48" rx="24" fill="#F5F5F5"/><text x="282" y="386" text-anchor="middle" font-size="16" font-weight="500" fill="#111">Pusto</text>
+    <g fill="#fff" stroke="#E5E5E5"><circle cx="46" cy="434" r="22"/><circle cx="98" cy="434" r="22"/><circle cx="150" cy="434" r="22"/></g>
+    <g stroke="#111" stroke-width="2" fill="none" stroke-linejoin="round"><path d="M37 442v-10h4l5-9c2 0 3 2 2 4l-1 4h6c2 0 3 2 2 4l-2 7h-12z"/><path d="M89 426v10h4l5 9c2 0 3-2 2-4l-1-4h6c2 0 3-2 2-4l-2-7h-12z"/><path d="M141 425h18v12h-10l-5 4v-4h-3z"/></g><path d="M150 428v5" stroke="#111" stroke-width="2"/><circle cx="150" cy="435.5" r="1" fill="#111"/>
+    <rect x="216" y="410" width="150" height="48" rx="24" fill="#F5F5F5"/><text x="291" y="440" text-anchor="middle" font-size="16" font-weight="500" fill="#111">➤ Nawiguj</text>
+
+    <text x="24" y="500" font-family="'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif" font-size="26" fill="#111">RANKING GATUNKÓW</text>
+    <text x="366" y="498" text-anchor="end" font-size="14" font-weight="500" fill="#707072">29 paź</text>
+    <rect x="24" y="508" width="342" height="1" fill="#E5E5E5"/>
+
+    <circle cx="29" cy="538" r="5" fill="#D30005"/>
+    <text x="46" y="536" font-size="16" font-weight="500" fill="#111">Borowik szlachetny</text>
+    <text x="46" y="553" font-size="12" font-weight="500" fill="#707072">bardzo dobry</text>
+    <text x="340" y="550" text-anchor="end" font-family="'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif" font-size="30" fill="#111">78</text>
+    <path d="M352 546l5-5 5 5" stroke="#111" stroke-width="2" fill="none"/>
+    <g font-size="14" font-weight="500" fill="#39393B">
+      <text x="46" y="582"><tspan fill="#007D48" font-size="16">✓</tspan>  Sosna, 87 lat, 60 % udziału – dobry partner</text>
+      <text x="46" y="606"><tspan fill="#007D48" font-size="16">✓</tspan>  42 mm deszczu 7–21 dni temu</text>
+      <text x="46" y="630"><tspan fill="#007D48" font-size="16">✓</tspan>  Skraj lasu, ok. 50 m (R = 1,10)</text>
+      <text x="46" y="654"><tspan fill="#D30005" font-size="16">✗</tspan>  2 z ostatnich 5 dni bez opadu</text>
+      <text x="46" y="678"><tspan fill="#111" font-size="16">★</tspan>  Twoje znalezisko 120 m stąd</text>
+    </g>
+    <rect x="24" y="696" width="342" height="1" fill="#E5E5E5"/>
+
+    <circle cx="29" cy="726" r="5" fill="#FF6A00"/>
+    <text x="46" y="724" font-size="16" font-weight="500" fill="#111">Podgrzybek brunatny</text>
+    <text x="46" y="741" font-size="12" font-weight="500" fill="#707072">dobry</text>
+    <text x="340" y="738" text-anchor="end" font-family="'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif" font-size="30" fill="#111">64</text>
+    <path d="M352 731l5 5 5-5" stroke="#111" stroke-width="2" fill="none"/>
+    <rect x="24" y="760" width="342" height="1" fill="#E5E5E5"/>
+
+    <circle cx="29" cy="790" r="5" fill="#F2C200"/>
+    <text x="46" y="788" font-size="16" font-weight="500" fill="#111">Maślak zwyczajny</text>
+    <text x="46" y="805" font-size="12" font-weight="500" fill="#707072">umiarkowany</text>
+    <text x="340" y="802" text-anchor="end" font-family="'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif" font-size="30" fill="#111">41</text>
+    <path d="M352 795l5 5 5-5" stroke="#111" stroke-width="2" fill="none"/>
+    <rect x="128" y="830" width="134" height="5" rx="2.5" fill="#111"/>
+  </g>
+  <rect x="1" y="1" width="388" height="842" rx="47" fill="none" stroke="#111" stroke-width="2"/>
+</svg>
